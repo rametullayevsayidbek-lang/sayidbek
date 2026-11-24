@@ -1,0 +1,1992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>7-Sinf English Hub & Games — by Rametullayev Sayidbek</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#EEF2FF',
+              100: '#E0E7FF',
+              500: '#6366F1',
+              600: '#4F46E5',
+              700: '#4338CA',
+              900: '#1E1B4B',
+            },
+            accent: {
+              500: '#F59E0B',
+              600: '#D97706',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom Animations & Glassmorphism */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(2deg); }
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes slideUpFade {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes shakeError {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-6px); }
+      40% { transform: translateX(6px); }
+      60% { transform: translateX(-4px); }
+      80% { transform: translateX(4px); }
+    }
+    @keyframes popSuccess {
+      0% { transform: scale(0.95); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+    @keyframes pulseGlow {
+      0%, 100% { box-shadow: 0 0 25px rgba(99, 102, 241, 0.35), 0 0 50px rgba(245, 158, 11, 0.2); }
+      50% { box-shadow: 0 0 45px rgba(99, 102, 241, 0.65), 0 0 80px rgba(245, 158, 11, 0.4); }
+    }
+    @keyframes orbitSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes shrinkProgress {
+      from { width: 100%; }
+      to { width: 0%; }
+    }
+
+    .animate-float { animation: floatSlow 4s ease-in-out infinite; }
+    .animate-gradient {
+      background-size: 200% 200%;
+      animation: gradientShift 7s ease infinite;
+    }
+    .animate-enter { animation: slideUpFade 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    .animate-shake { animation: shakeError 0.38s ease-in-out; }
+    .animate-pop { animation: popSuccess 0.3s ease-out; }
+    .animate-glow { animation: pulseGlow 3s ease-in-out infinite; }
+    .animate-orbit { animation: orbitSpin 18s linear infinite; }
+
+    /* Print Poster Only */
+    @media print {
+      body * { visibility: hidden; }
+      #printable-poster, #printable-poster * { visibility: visible; }
+      #printable-poster {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        box-shadow: none !important;
+        border: 2px solid #cbd5e1 !important;
+        margin: 0 !important;
+        padding: 24px !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white min-h-screen flex flex-col">
+
+  <!-- ========================================================= -->
+  <!-- 7-SECOND ANIMATED SPLASH SCREEN ("by Rametullayev Sayidbek") -->
+  <!-- ========================================================= -->
+  <div id="intro-splash" class="fixed inset-0 z-[100] bg-slate-950 flex flex-col items-center justify-center p-6 overflow-hidden transition-opacity duration-700">
+    <!-- Animated Background Orbs & Orbit Ring -->
+    <div class="absolute w-96 h-96 bg-indigo-600/25 rounded-full blur-3xl -top-16 -left-16 animate-pulse pointer-events-none"></div>
+    <div class="absolute w-96 h-96 bg-amber-500/20 rounded-full blur-3xl -bottom-16 -right-16 animate-pulse pointer-events-none"></div>
+    <div class="absolute w-[340px] h-[340px] sm:w-[460px] sm:h-[460px] rounded-full border border-indigo-500/20 border-dashed animate-orbit pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-xl w-full text-center space-y-6 animate-enter">
+      <!-- Top Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-500/15 border border-indigo-400/30 text-indigo-300 text-xs sm:text-sm font-extrabold tracking-wide">
+        <span>🏫</span>
+        <span>7-B Ixtisoslashtirilgan Maktab • Qo'ng'irot</span>
+      </div>
+
+      <!-- Glowing Emblem -->
+      <div class="mx-auto w-24 h-24 rounded-3xl bg-gradient-to-br from-indigo-500 via-purple-600 to-amber-500 animate-gradient animate-glow flex items-center justify-center text-white font-black text-3xl shadow-2xl">
+        RS
+      </div>
+
+      <!-- Main Author Signature -->
+      <div class="space-y-2">
+        <p class="text-xs sm:text-sm font-mono uppercase tracking-[0.25em] text-slate-400">
+          Created & Engineered
+        </p>
+        <h1 class="text-3xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-amber-200 to-indigo-300 animate-gradient leading-tight">
+          by Rametullayev Sayidbek
+        </h1>
+        <p class="text-sm sm:text-base text-slate-300 font-medium pt-1">
+          Ingliz tili Retsept Loyihasi • V1–V2–V3 • Essential 4 (Unit 11)
+        </p>
+      </div>
+
+      <!-- 7-Second Countdown Progress Bar -->
+      <div class="max-w-sm mx-auto space-y-2 pt-2">
+        <div class="flex justify-between text-xs font-mono font-bold text-slate-400">
+          <span>Loading Platform...</span>
+          <span id="splash-timer-text" class="text-amber-400">7s</span>
+        </div>
+        <div class="w-full h-2.5 bg-slate-900 rounded-full overflow-hidden border border-slate-800 p-0.5">
+          <div id="splash-progress-bar" class="h-full rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-amber-400" style="width: 100%; transition: width 1s linear;"></div>
+        </div>
+      </div>
+
+      <!-- Skip Button -->
+      <div class="pt-2">
+        <button onclick="dismissSplash()" class="text-xs font-bold text-slate-400 hover:text-white bg-slate-900/90 hover:bg-slate-800 border border-slate-800 px-4 py-2 rounded-xl transition">
+          Skip Intro / O'tkazib yuborish →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confetti Canvas Overlay -->
+  <canvas id="confetti-canvas" class="fixed inset-0 pointer-events-none z-50"></canvas>
+
+  <!-- Toast Notification -->
+  <div id="toast-box" class="fixed bottom-5 right-5 z-50 hidden max-w-sm bg-slate-900/95 backdrop-blur text-white px-4 py-3 rounded-2xl shadow-2xl border border-indigo-500/40 flex items-center gap-3 animate-enter">
+    <span id="toast-icon" class="text-xl">✨</span>
+    <p id="toast-msg" class="text-sm font-medium"></p>
+  </div>
+
+  <!-- ========================================================= -->
+  <!-- TOP STICKY NAVIGATION & AUTHOR HEADER                     -->
+  <!-- ========================================================= -->
+  <header class="sticky top-0 z-40 bg-slate-950/85 backdrop-blur-xl border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-3">
+      <!-- Brand + Author Credit -->
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-indigo-500 via-purple-600 to-amber-500 animate-gradient flex items-center justify-center font-black text-white text-lg shadow-lg shadow-indigo-500/25">
+          7B
+        </div>
+        <div>
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-[11px] font-extrabold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+              <span data-lang-en>Specialized School • Grade 7 • Kungrad</span>
+              <span data-lang-uz>Ixtisoslashtirilgan Maktab • 7-sinf • Qo'ng'irot</span>
+            </span>
+            <span class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/30">
+              by Rametullayev Sayidbek • Qo'ng'irot (7-B)
+            </span>
+          </div>
+          <h1 class="text-base sm:text-lg font-black text-white tracking-tight mt-0.5">
+            <span data-lang-en>English Recipe Project & Vocabulary Arena</span>
+            <span data-lang-uz>Ingliz tili Retsept Loyihasi va O'yinlar Arenasi</span>
+          </h1>
+        </div>
+      </div>
+
+      <!-- Right Controls: XP Counter + Language Switcher -->
+      <div class="flex items-center gap-2.5">
+        <div class="flex items-center gap-1.5 bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-xl">
+          <span class="text-amber-400 text-sm">⚡</span>
+          <span class="text-xs font-bold text-slate-400">XP:</span>
+          <span id="global-xp" class="text-sm font-black text-amber-400 font-mono">0</span>
+        </div>
+
+        <div class="flex items-center bg-slate-900 p-1 rounded-xl border border-slate-800" role="group">
+          <button onclick="setLangMode('en')" id="btn-lang-en" class="lang-btn px-2.5 py-1 rounded-lg text-xs font-bold transition-all">🇬🇧 EN</button>
+          <button onclick="setLangMode('uz')" id="btn-lang-uz" class="lang-btn px-2.5 py-1 rounded-lg text-xs font-bold transition-all">🇺🇿 UZ</button>
+          <button onclick="setLangMode('both')" id="btn-lang-both" class="lang-btn px-2.5 py-1 rounded-lg text-xs font-bold transition-all">🌐 EN+UZ</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs (3 Core Sections) -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-3 flex gap-2 overflow-x-auto">
+      <button onclick="switchMainTab('sayidbek-recipe')" id="nav-sayidbek-recipe" class="main-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold flex items-center gap-2 transition-all whitespace-nowrap">
+        <span>👨‍🍳</span>
+        <span>
+          <span data-lang-en>1. Mening Retseptim (Sayidbek)</span>
+          <span data-lang-uz>1. Mening Retseptim (Sayidbek)</span>
+        </span>
+      </button>
+
+      <button onclick="switchMainTab('builder')" id="nav-builder" class="main-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold flex items-center gap-2 transition-all whitespace-nowrap">
+        <span>✍️</span>
+        <span>
+          <span data-lang-en>2. Loyiha Yaratish (Poster Builder)</span>
+          <span data-lang-uz>2. Loyiha Yaratish (Retsept Konstruktori)</span>
+        </span>
+      </button>
+
+      <button onclick="switchMainTab('games')" id="nav-games" class="main-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold flex items-center gap-2 transition-all whitespace-nowrap">
+        <span>🎮</span>
+        <span>
+          <span data-lang-en>3. O'yinlar Arenasi (V1-V2-V3 & Essential 4 Unit 11)</span>
+          <span data-lang-uz>3. O'yinlar Arenasi (V1-V2-V3 & Essential 4 Unit 11)</span>
+        </span>
+        <span class="text-[10px] bg-emerald-500 text-slate-950 font-black px-1.5 py-0.5 rounded-md">4 GAMES</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========================================================= -->
+  <!-- MAIN CONTENT AREA                                         -->
+  <!-- ========================================================= -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 space-y-8">
+
+    <!-- ======================================================= -->
+    <!-- SECTION 1: SAYIDBEK'S CUSTOM RECIPE PROJECT             -->
+    <!-- ======================================================= -->
+    <section id="section-sayidbek-recipe" class="space-y-8 animate-enter">
+
+      <!-- Hero Banner -->
+      <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-indigo-900 via-slate-900 to-purple-950 border border-indigo-500/30 p-6 sm:p-8 shadow-2xl">
+        <div class="absolute -right-10 -top-10 w-56 h-56 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -left-10 -bottom-10 w-56 h-56 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+          <div class="space-y-3 max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-300 text-xs font-extrabold">
+              <span>🏆</span>
+              <span>Original Grade 7 Project • by Rametullayev Sayidbek (Qo'ng'irot)</span>
+            </div>
+            <h2 class="text-2xl sm:text-4xl font-black text-white leading-tight">
+              <span data-lang-en>Kungrad Traditional Juweri Gurtik & Besbarmak</span>
+              <span data-lang-uz>Qo'ng'irotcha Jo'xori Gurtik va Besbarmoq — Mening Loyiham</span>
+            </h2>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              <span data-lang-en>Instead of copying the ice cream recipe from the textbook, here is my own specialized-school English recipe project celebrating our proud hometown Kungrad (Qo'ng'irot, Karakalpakstan) with proper imperatives, connectors, and warnings!</span>
+              <span data-lang-uz>Darslikdagi muzqaymoq retseptini ko'chirib qo'ymasdan, men o'zimizning ona shahrimiz Qo'ng'irotning mashhur milliy taomi — Jo'xori Gurtik (Besbarmoq) retseptini ixtisoslashtirilgan maktab darajasida ingliz tilida yozib chiqdim!</span>
+            </p>
+            <div class="flex flex-wrap gap-3 pt-1">
+              <button onclick="switchMainTab('games')" class="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-400 hover:to-purple-500 text-white font-extrabold text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-lg shadow-indigo-500/25 transition transform hover:-translate-y-0.5">
+                🎮 <span data-lang-en>O'yinlarga o'tish (V1-V2-V3 & Essential 4 Unit 11) →</span><span data-lang-uz>O'yinlarga o'tish (V1-V2-V3 & Essential 4 Unit 11) →</span>
+              </button>
+              <button onclick="speakText('How to cook authentic Kungrad Juweri Gurtik and Besbarmak. Boil the tender beef in a deep cauldron for two hours, then knead white sorghum flour dough into delicate diamond shapes.')" class="bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition">
+                🔊 <span data-lang-en>Listen Intro</span><span data-lang-uz>Talaffuzni eshitish</span>
+              </button>
+              <button onclick="toggleGrammarCheckModal()" class="bg-slate-800/90 hover:bg-slate-800 text-slate-200 border border-slate-700 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl transition">
+                🔬 <span data-lang-en>Grammar Rules</span><span data-lang-uz>Grammatika</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Floating Dish Card -->
+          <div class="animate-float bg-slate-900/90 backdrop-blur border border-amber-500/30 rounded-3xl p-5 text-center shadow-xl w-full lg:w-64 shrink-0">
+            <div class="text-6xl mb-2">🍲</div>
+            <div class="text-sm font-black text-amber-400 uppercase tracking-wider">Kungrad Heritage</div>
+            <div class="text-base font-extrabold text-white mt-0.5">Juweri Gurtik</div>
+            <div class="text-xs text-slate-400 mt-1">by Rametullayev Sayidbek</div>
+            <div class="mt-3 pt-3 border-t border-slate-800 flex justify-around text-xs">
+              <div>
+                <span class="block text-slate-400">Time</span>
+                <span class="font-bold text-emerald-400">2 hours</span>
+              </div>
+              <div>
+                <span class="block text-slate-400">Origin</span>
+                <span class="font-bold text-indigo-400">Qo'ng'irot</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SAYIDBEK'S FULL KUNGRAD RECIPE CARD -->
+      <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-wider text-indigo-400">
+              Project Showcase • by Rametullayev Sayidbek • Qo'ng'irot (7-B)
+            </span>
+            <h3 class="text-xl sm:text-2xl font-black text-white mt-0.5">
+              How to Cook Authentic Kungrad Juweri Gurtik (Besbarmak)
+            </h3>
+          </div>
+          <label class="inline-flex items-center gap-2 cursor-pointer text-xs font-bold bg-indigo-500/15 text-indigo-300 border border-indigo-500/30 px-3 py-1.5 rounded-xl">
+            <input type="checkbox" id="sayidbek-grammar-toggle" checked onchange="toggleSayidbekHighlights()" class="rounded text-indigo-500">
+            <span>
+              <span data-lang-en>Highlight Grammar Structures</span>
+              <span data-lang-uz>Grammatik tuzilmalarni ajratish</span>
+            </span>
+          </label>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <!-- Left Column: Intro, Time, Ingredients, Tools -->
+          <div class="lg:col-span-5 space-y-5">
+            <div class="bg-slate-950/70 p-4 rounded-2xl border border-slate-800">
+              <div class="text-xs font-extrabold uppercase tracking-wider text-amber-400 mb-1">1. Introduction / Kirish</div>
+              <p class="text-sm text-slate-200 leading-relaxed">
+                "Juweri Gurtik is the proud culinary symbol of Kungrad and Karakalpakstan. Rich, hearty, and full of tradition, this dish brings whole families together around a generous table!"
+              </p>
+              <p class="text-xs text-slate-400 mt-1.5">
+                🇺🇿 Jo'xori Gurtik — Qo'ng'irot va Qoraqalpog'iston oshxonasining faxrli ramzidir. To'yimli va an'analarga boy bu taom butun oilani fayzli dasturxon atrofida jamlaydi!
+              </p>
+            </div>
+
+            <div class="bg-slate-950/70 p-4 rounded-2xl border border-slate-800 flex items-center justify-between">
+              <div>
+                <div class="text-xs font-extrabold uppercase tracking-wider text-amber-400">2. Preparation Time / Vaqti</div>
+                <div class="text-base font-black text-white mt-0.5">⏱️ 2 hours (120 daqiqa)</div>
+              </div>
+              <span class="text-2xl">⏳</span>
+            </div>
+
+            <div class="bg-slate-950/70 p-4 rounded-2xl border border-slate-800">
+              <div class="text-xs font-extrabold uppercase tracking-wider text-amber-400 mb-2.5">3. Ingredients / Masalliqlar</div>
+              <ul class="space-y-2 text-sm text-slate-200">
+                <li class="flex justify-between border-b border-slate-800/60 pb-1">
+                  <span>• <strong>1 kg</strong> of bone-in beef or lamb</span>
+                  <span class="text-xs text-slate-400">1 kg suyakli mol/qo'y go'shti</span>
+                </li>
+                <li class="flex justify-between border-b border-slate-800/60 pb-1">
+                  <span>• <strong>400g</strong> of white sorghum flour (jo'xori uni)</span>
+                  <span class="text-xs text-slate-400">400g oq jo'xori uni</span>
+                </li>
+                <li class="flex justify-between border-b border-slate-800/60 pb-1">
+                  <span>• <strong>150g</strong> of wheat flour & <strong>1</strong> egg</span>
+                  <span class="text-xs text-slate-400">150g bug'doy uni va 1 ta tuxum</span>
+                </li>
+                <li class="flex justify-between border-b border-slate-800/60 pb-1">
+                  <span>• <strong>3 large</strong> onions & <strong>3</strong> potatoes</span>
+                  <span class="text-xs text-slate-400">3 ta yirik piyoz va 3 ta kartoshka</span>
+                </li>
+                <li class="flex justify-between border-b border-slate-800/60 pb-1">
+                  <span>• <strong>2 carrots</strong> & <strong>1 cup</strong> of mung beans (mosh)</span>
+                  <span class="text-xs text-slate-400">2 ta sabzi va 1 piyola mosh</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>• <strong>1 tablespoon</strong> of salt & black pepper</span>
+                  <span class="text-xs text-slate-400">1 osh qoshiq tuz va murch</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-slate-950/70 p-4 rounded-2xl border border-slate-800">
+              <div class="text-xs font-extrabold uppercase tracking-wider text-amber-400 mb-2">4. You'll also need / Kerakli jihozlar</div>
+              <ul class="space-y-1.5 text-sm text-slate-200">
+                <li>• <strong>1 deep cauldron (qozon)</strong> and a skimmer <span class="text-xs text-slate-400">(chuqur qozon va chovli)</span></li>
+                <li>• <strong>1 rolling pin (o'qlov)</strong> and wooden board <span class="text-xs text-slate-400">(o'qlov va taxtakach)</span></li>
+                <li>• <strong>1 wide traditional platter (tabaq)</strong> <span class="text-xs text-slate-400">(keng yog'och yoki chinni tabaq)</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Right Column: Step-by-Step Instructions + Note -->
+          <div class="lg:col-span-7 flex flex-col justify-between space-y-5">
+            <div class="bg-slate-950/70 p-5 rounded-2xl border border-slate-800 space-y-3.5">
+              <div class="text-xs font-extrabold uppercase tracking-wider text-amber-400">
+                5. What to do / Tayyorlash tartibi (Imperative Verbs Highlighted)
+              </div>
+              <ol class="space-y-3.5 text-sm text-slate-200">
+                <li class="flex gap-3">
+                  <span class="w-6 h-6 rounded-lg bg-indigo-500/20 text-indigo-300 font-black text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
+                  <div>
+                    <p><span class="s-imp bg-indigo-500/25 text-indigo-200 font-bold px-1.5 py-0.5 rounded">Place</span> the meat in cold water in a deep cauldron, <span class="s-imp bg-indigo-500/25 text-indigo-200 font-bold px-1.5 py-0.5 rounded">bring</span> it to a boil, and <span class="s-imp bg-indigo-500/25 text-indigo-200 font-bold px-1.5 py-0.5 rounded">skim</span> off the foam carefully.</p>
+                    <p class="text-xs text-slate-400 mt-0.5">Go'shtni chuqur qozondagi sovuq suvga soling, qaynating va ko'pigini ehtiyotkorlik bilan olib tashlang.</p>
+                  </div>
+                </li>
+                <li class="flex gap-3">
+                  <span class="w-6 h-6 rounded-lg bg-indigo-500/20 text-indigo-300 font-black text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
+                  <div>
+                    <p><span class="s-imp bg-indigo-500/25 text-indigo-200 font-bold px-1.5 py-0.5 rounded">Simmer</span> the broth gently for 1.5 hours, <span class="s-seq bg-emerald-500/25 text-emerald-200 font-bold px-1.5 py-0.5 rounded">then</span> <span class="s-imp bg-indigo-500/25 text-indigo-200 font-bold px-1.5 py-0.5 rounded">add</span> the mung beans, whole potatoes, carrots, and salt.</p>
+                    <p class="text-xs text-slate-400 mt-0.5">Sho'rvani 1,5 soat past olovda qaynating, so'ngra mosh, butun kartoshka, sabzi va tuzni soling.</p>
+                  </div>
+                </li>
+                <li class="flex gap-3">
+                  <span class="w-6 h-6 rounded-lg bg-indigo-500/20 text-indigo-300 font-black text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
+                  <div>
+                    <p><span class="s-imp bg-indigo-500/25 text-indigo-200 font-bold px-1.5 py-0.5 rounded">Mix</span> the sorghum flour, wheat flour, egg, and warm salted water, and <span class="s-imp bg-indigo-500/25 text-indigo-200 font-bold px-1.5 py-0.5 rounded">knead</span> a firm, smooth dough.</p>
+                    <p class="text-xs text-slate-400 mt-0.5">Jo'xori uni, bug'doy uni, tuxum va iliq tuzli suvni aralashtirib, qattiq va silliq xamir qoring.</p>
+                  </div>
+                </li>
+                <li class="flex gap-3">
+                  <span class="w-6 h-6 rounded-lg bg-indigo-500/20 text-indigo-300 font-black text-xs flex items-center justify-center shrink-0 mt-0.5">4</span>
+                  <div>
+                    <p><span class="s-imp bg-indigo-500/25 text-indigo-200 font-bold px-1.5 py-0.5 rounded">Roll</span> out the dough to 3 mm thickness and <span class="s-imp bg-indigo-500/25 text-indigo-200 font-bold px-1.5 py-0.5 rounded">cut</span> it into neat diamond-shaped pieces (<em>gurtik</em>).</p>
+                    <p class="text-xs text-slate-400 mt-0.5">Xamirni 3 mm qalinlikda yoying va chiroyli romb (gurtik) shakllarida kesib chiqing.</p>
+                  </div>
+                </li>
+                <li class="flex gap-3">
+                  <span class="w-6 h-6 rounded-lg bg-indigo-500/20 text-indigo-300 font-black text-xs flex items-center justify-center shrink-0 mt-0.5">5</span>
+                  <div>
+                    <p><span class="s-imp bg-indigo-500/25 text-indigo-200 font-bold px-1.5 py-0.5 rounded">Remove</span> the cooked meat and vegetables, <span class="s-imp bg-indigo-500/25 text-indigo-200 font-bold px-1.5 py-0.5 rounded">boil</span> the gurtik in the rich broth for 7 minutes, and <span class="s-imp bg-indigo-500/25 text-indigo-200 font-bold px-1.5 py-0.5 rounded">serve</span> on a wide tabaq topped with sliced meat and onion sauce!</p>
+                    <p class="text-xs text-slate-400 mt-0.5">Pishgan go'sht va sabzavotlarni suzib oling, gurtiklarni boy sho'rvada 7 daqiqa qaynating va keng tabaqqa solib, ustiga to'g'ralgan go'sht va piyozli sous quyib torting!</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+
+            <!-- Chef's Note -->
+            <div class="bg-amber-500/10 border border-amber-500/30 p-4 rounded-2xl">
+              <div class="text-xs font-extrabold uppercase tracking-wider text-amber-300 mb-1">
+                6. Chef Sayidbek's Note / Eslatma (Qo'ng'irot):
+              </div>
+              <p class="text-sm text-slate-200 leading-relaxed">
+                This recipe serves 5–6 people. <span class="s-cond bg-amber-500/25 text-amber-200 font-bold px-1.5 py-0.5 rounded">If you want</span>, you can serve the hot broth (<em>sorpa</em>) separately in bowls (<em>keseler</em>), but <span class="s-neg bg-rose-500/25 text-rose-200 font-bold px-1.5 py-0.5 rounded">don't overcook</span> the sorghum gurtik <span class="s-rea bg-purple-500/25 text-purple-200 font-bold px-1.5 py-0.5 rounded">because</span> it tastes best when it holds its tender shape!
+              </p>
+              <p class="text-xs text-slate-400 mt-1.5">
+                🇺🇿 Bu retsept 5–6 kishi uchun mo'ljallangan. Agar xohlasangiz, issiq sho'rvasini alohida kosalarda tortishingiz mumkin, lekin jo'xori gurtikni haddan tashqari ko'p qaynatmang, chunki u o'z shaklini saqlab qolganda eng mazali bo'ladi!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTERACTIVE TEXTBOOK EXERCISES (PAGES 84-85) -->
+      <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-400">
+              Textbook Practice • Pages 84–85
+            </span>
+            <h3 class="text-xl font-black text-white mt-0.5">
+              <span data-lang-en>Exercise 1: Match Each Recipe Part with Its Definition</span>
+              <span data-lang-uz>1-mashq: Retsept qismlarini ularning ta'rifi bilan moslashtiring</span>
+            </h3>
+          </div>
+          <button onclick="checkTextbookMatching()" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs sm:text-sm px-5 py-2.5 rounded-xl transition">
+            ✅ Check Answers (+25 XP)
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="ex1-matching-grid"></div>
+        <div id="ex1-result-banner" class="hidden p-4 rounded-2xl text-sm font-bold"></div>
+      </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 2: GAMES ARENA (V1-V2-V3 + ESSENTIAL 3 UNIT 11) -->
+    <!-- ======================================================= -->
+    <section id="section-games" class="hidden space-y-6 animate-enter">
+
+      <!-- Games Header & Game Selector -->
+      <div class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 border border-indigo-500/30 rounded-3xl p-6 shadow-xl">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <span class="inline-block text-xs font-extrabold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-3 py-1 rounded-full mb-1">
+              Specialized School Training Arena • by Rametullayev Sayidbek
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-black text-white">
+              <span data-lang-en>Interactive English Mastery Games</span>
+              <span data-lang-uz>Interaktiv Ingliz Tili O'yinlar Arenasi</span>
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-400 mt-1">
+              <span data-lang-en>Train Irregular Verbs (V1 → V2 → V3), 4000 Essential English Words 4 (Unit 11), Error Hunter & Grammar Blitz!</span>
+              <span data-lang-uz>Noto'g'ri fe'llar (V1 → V2 → V3), 4000 Essential English Words 4 (11-bo'lim), Xatolarni Ovla va Grammatika o'yinlari!</span>
+            </p>
+          </div>
+
+          <!-- Streak & Score Pill -->
+          <div class="flex items-center gap-3 bg-slate-950/80 border border-slate-800 px-4 py-3 rounded-2xl">
+            <div class="text-center">
+              <div class="text-[10px] uppercase font-bold text-slate-400">Streak</div>
+              <div id="game-streak" class="text-lg font-black text-orange-400 font-mono">🔥 0</div>
+            </div>
+            <div class="w-px h-8 bg-slate-800"></div>
+            <div class="text-center">
+              <div class="text-[10px] uppercase font-bold text-slate-400">Total XP</div>
+              <div id="arena-xp" class="text-lg font-black text-amber-400 font-mono">⚡ 0</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Game Sub-Tabs -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-6">
+          <button onclick="switchGameMode('verbs')" id="gsub-verbs" class="game-sub-btn p-4 rounded-2xl border text-left transition-all">
+            <div class="flex items-center justify-between">
+              <span class="text-2xl">⚡</span>
+              <span class="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300">V1 → V2 → V3</span>
+            </div>
+            <div class="font-extrabold text-sm text-white mt-2">Irregular Verbs</div>
+            <div class="text-xs text-slate-400">V1 turadi, V2 va V3 yozasiz</div>
+          </button>
+
+          <button onclick="switchGameMode('essential')" id="gsub-essential" class="game-sub-btn p-4 rounded-2xl border text-left transition-all">
+            <div class="flex items-center justify-between">
+              <span class="text-2xl">📘</span>
+              <span class="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">Book 4 • Unit 11</span>
+            </div>
+            <div class="font-extrabold text-sm text-white mt-2">4000 Essential Words 4</div>
+            <div class="text-xs text-slate-400">Unit 11 Quiz, Scramble & Audio</div>
+          </button>
+
+          <button onclick="switchGameMode('hunter')" id="gsub-hunter" class="game-sub-btn p-4 rounded-2xl border text-left transition-all">
+            <div class="flex items-center justify-between">
+              <span class="text-2xl">🕵️</span>
+              <span class="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-rose-500/20 text-rose-300">7-B Challenge</span>
+            </div>
+            <div class="font-extrabold text-sm text-white mt-2">Error Hunter (Xato Top!)</div>
+            <div class="text-xs text-slate-400">Ixtisoslashtirilgan maktab testi</div>
+          </button>
+
+          <button onclick="switchGameMode('grammar')" id="gsub-grammar" class="game-sub-btn p-4 rounded-2xl border text-left transition-all">
+            <div class="flex items-center justify-between">
+              <span class="text-2xl">🧠</span>
+              <span class="text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">Speed Blitz</span>
+            </div>
+            <div class="font-extrabold text-sm text-white mt-2">Recipe & Grammar Blitz</div>
+            <div class="text-xs text-slate-400">Tezkor grammatika savollari</div>
+          </button>
+        </div>
+      </div>
+
+      <!-- ===================================================== -->
+      <!-- GAME A: IRREGULAR VERBS V1 -> V2 -> V3 ARENA          -->
+      <!-- ===================================================== -->
+      <div id="game-panel-verbs" class="space-y-6 animate-enter">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl">
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+            <div>
+              <h3 class="text-xl font-black text-white">
+                <span data-lang-en>Irregular Verbs: Type V2 (Past Simple) & V3 (Past Participle)</span>
+                <span data-lang-uz>Noto'g'ri fe'llar: V2 va V3 shakllarini yozing</span>
+              </h3>
+              <p class="text-xs text-slate-400 mt-0.5">
+                <span data-lang-en>Specialized school verb bank (55+ challenging irregular verbs). Press Enter to check!</span>
+                <span data-lang-uz>Ixtisoslashtirilgan maktab darajasidagi 55+ murakkab noto'g'ri fe'llar bazasi. Tekshirish uchun Enter bosing!</span>
+              </p>
+            </div>
+            <div class="flex items-center gap-2">
+              <select id="verb-difficulty" onchange="resetVerbRound()" class="bg-slate-950 border border-slate-700 text-xs font-bold text-slate-200 px-3 py-2 rounded-xl focus:outline-none">
+                <option value="all">All Verbs (55+)</option>
+                <option value="hard">Hard / Specialized (arise, shrink, wring...)</option>
+                <option value="core">Core Grade 7 (write, speak, choose...)</option>
+              </select>
+              <button onclick="toggleVerbTable()" class="text-xs font-bold bg-slate-800 hover:bg-slate-700 text-indigo-300 px-3 py-2 rounded-xl border border-slate-700 transition">
+                📖 <span data-lang-en>Study Table</span><span data-lang-uz>Jadvalni ko'rish</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Active Verb Challenge Card -->
+          <div id="verb-card" class="bg-slate-950/90 border border-indigo-500/30 rounded-3xl p-6 sm:p-8 max-w-3xl mx-auto space-y-6">
+            <div class="flex items-center justify-between text-xs font-bold text-slate-400">
+              <span id="verb-counter">Verb #1</span>
+              <span id="verb-level-badge" class="px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300">Specialized Level</span>
+            </div>
+
+            <!-- V1 Display -->
+            <div class="text-center space-y-1">
+              <div class="text-xs font-extrabold uppercase tracking-widest text-slate-500">V1 (Base Form / Asosiy shakl)</div>
+              <div class="flex items-center justify-center gap-3">
+                <div id="verb-v1-display" class="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-white to-amber-300 font-mono py-1">
+                  arise
+                </div>
+                <button type="button" onclick="speakCurrentVerb()" title="Listen pronunciation" class="w-10 h-10 rounded-xl bg-indigo-500/20 hover:bg-indigo-500/30 border border-indigo-500/30 text-indigo-300 flex items-center justify-center transition">
+                  🔊
+                </button>
+              </div>
+              <div id="verb-uz-hint" class="text-sm font-semibold text-amber-400">
+                🇺🇿 paydo bo'lmoq, ko'tarilmoq
+              </div>
+            </div>
+
+            <!-- V2 & V3 Inputs -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-extrabold uppercase tracking-wider text-indigo-300 mb-1.5">
+                  V2 — Past Simple (O'tgan zamon)
+                </label>
+                <input type="text" id="input-v2" autocomplete="off" spellcheck="false" placeholder="Type V2..." class="w-full bg-slate-900 border-2 border-slate-700 focus:border-indigo-500 rounded-2xl px-4 py-3 text-lg font-mono font-bold text-white focus:outline-none transition" />
+                <div id="feedback-v2" class="text-xs font-bold mt-1.5 min-h-[18px]"></div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-extrabold uppercase tracking-wider text-purple-300 mb-1.5">
+                  V3 — Past Participle (Sifatdosh II)
+                </label>
+                <input type="text" id="input-v3" autocomplete="off" spellcheck="false" placeholder="Type V3..." class="w-full bg-slate-900 border-2 border-slate-700 focus:border-purple-500 rounded-2xl px-4 py-3 text-lg font-mono font-bold text-white focus:outline-none transition" />
+                <div id="feedback-v3" class="text-xs font-bold mt-1.5 min-h-[18px]"></div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+              <div class="flex gap-2">
+                <button type="button" onclick="showVerbHint()" class="text-xs font-bold bg-slate-800 hover:bg-slate-700 text-amber-300 px-3.5 py-2.5 rounded-xl transition">
+                  💡 Hint (1st letter)
+                </button>
+                <button type="button" onclick="revealVerbAnswer()" class="text-xs font-bold bg-slate-800 hover:bg-slate-700 text-slate-300 px-3.5 py-2.5 rounded-xl transition">
+                  👁️ Show Answer
+                </button>
+              </div>
+
+              <div class="flex gap-2">
+                <button type="button" id="btn-check-verb" onclick="checkVerbAnswer()" class="bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-400 hover:to-purple-500 text-white font-extrabold text-sm px-6 py-2.5 rounded-xl shadow-lg shadow-indigo-500/25 transition">
+                  ✅ Check / Tekshirish
+                </button>
+                <button type="button" id="btn-next-verb" onclick="nextVerb()" class="hidden bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm px-6 py-2.5 rounded-xl shadow-lg transition">
+                  Next Verb →
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Collapsible Full V1-V2-V3 Reference Table -->
+          <div id="verb-reference-table" class="hidden mt-6 bg-slate-950 border border-slate-800 rounded-2xl p-4 max-h-80 overflow-y-auto">
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="text-sm font-extrabold text-white">Irregular Verbs Reference List (V1 — V2 — V3)</h4>
+              <button onclick="toggleVerbTable()" class="text-xs text-slate-400 hover:text-white">Close ✕</button>
+            </div>
+            <div id="verb-table-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 text-xs font-mono"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================================================== -->
+      <!-- GAME B: 4000 ESSENTIAL ENGLISH WORDS 4 — UNIT 11      -->
+      <!-- ===================================================== -->
+      <div id="game-panel-essential" class="hidden space-y-6 animate-enter">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-400">
+                4000 Essential English Words • Book 4 • Unit 11
+              </span>
+              <h3 class="text-xl sm:text-2xl font-black text-white mt-0.5">
+                <span data-lang-en>Essential 4 — Unit 11 Vocabulary Arena (20 Words)</span>
+                <span data-lang-uz>Essential 4 — 11-bo'lim So'z Boyligi O'yini (20 ta so'z)</span>
+              </h3>
+            </div>
+
+            <!-- Sub-modes for Essential 4 Unit 11 -->
+            <div class="flex flex-wrap bg-slate-950 p-1 rounded-xl border border-slate-800 gap-1">
+              <button onclick="setEssMode('quiz')" id="ess-tab-quiz" class="ess-mode-btn px-3 py-1.5 rounded-lg text-xs font-bold transition">
+                🎯 Quiz (EN/UZ)
+              </button>
+              <button onclick="setEssMode('scramble')" id="ess-tab-scramble" class="ess-mode-btn px-3 py-1.5 rounded-lg text-xs font-bold transition">
+                🔤 Harflarni terish
+              </button>
+              <button onclick="setEssMode('context')" id="ess-tab-context" class="ess-mode-btn px-3 py-1.5 rounded-lg text-xs font-bold transition">
+                ✍️ Gapni to'ldir
+              </button>
+              <button onclick="setEssMode('wordlist')" id="ess-tab-wordlist" class="ess-mode-btn px-3 py-1.5 rounded-lg text-xs font-bold transition">
+                📖 20 Words + Audio
+              </button>
+            </div>
+          </div>
+
+          <!-- MODE 1: MULTIPLE CHOICE DEFINITION & UZBEK QUIZ -->
+          <div id="ess-view-quiz" class="max-w-3xl mx-auto bg-slate-950 border border-emerald-500/30 rounded-3xl p-6 sm:p-8 space-y-6">
+            <div class="flex items-center justify-between text-xs font-bold text-slate-400">
+              <span id="ess-quiz-progress">Question 1 / 20</span>
+              <span id="ess-quiz-score" class="text-emerald-400">Score: 0</span>
+            </div>
+
+            <div class="space-y-2 text-center">
+              <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full">
+                Essential 4 • Unit 11 Definition Match
+              </span>
+              <h4 id="ess-quiz-prompt" class="text-lg sm:text-xl font-extrabold text-white pt-2 leading-snug">
+                Loading question...
+              </h4>
+              <p id="ess-quiz-uz-clue" class="text-xs sm:text-sm text-amber-300 font-medium">
+                🇺🇿 O'zbekcha ma'nosi...
+              </p>
+            </div>
+
+            <div id="ess-quiz-options" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+
+            <div id="ess-quiz-explanation" class="hidden p-4 rounded-2xl bg-slate-900 border border-slate-800 text-xs sm:text-sm text-slate-300"></div>
+
+            <div class="flex justify-end">
+              <button id="ess-next-btn" onclick="nextEssQuestion()" class="hidden bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm px-6 py-2.5 rounded-xl transition">
+                Next Word →
+              </button>
+            </div>
+          </div>
+
+          <!-- MODE 2: WORD SCRAMBLE (UNSCRAMBLE LETTERS) -->
+          <div id="ess-view-scramble" class="hidden max-w-3xl mx-auto bg-slate-950 border border-purple-500/30 rounded-3xl p-6 sm:p-8 space-y-6">
+            <div class="flex items-center justify-between text-xs font-bold text-slate-400">
+              <span>🔤 Unscramble the Essential 4 Unit 11 Word</span>
+              <span id="ess-scr-counter" class="text-purple-400">Word 1 / 20</span>
+            </div>
+
+            <div class="text-center space-y-3">
+              <div class="text-xs font-bold text-amber-300" id="ess-scr-uz">🇺🇿 O'zbekcha ma'nosi</div>
+              <p class="text-xs sm:text-sm text-slate-400" id="ess-scr-def">Definition</p>
+              <div id="ess-scr-letters" class="flex flex-wrap justify-center gap-2 py-3"></div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+              <input type="text" id="ess-scr-input" autocomplete="off" placeholder="Harflardan to'g'ri so'zni tuzing..." class="flex-1 bg-slate-900 border-2 border-slate-700 focus:border-purple-500 rounded-2xl px-4 py-3 text-base font-mono font-bold text-white uppercase tracking-widest focus:outline-none" />
+              <button onclick="checkEssScramble()" class="bg-purple-500 hover:bg-purple-400 text-white font-black text-sm px-6 py-3 rounded-2xl transition">
+                Check Spelling
+              </button>
+            </div>
+
+            <div id="ess-scr-feedback" class="text-sm font-bold min-h-[22px]"></div>
+
+            <div class="flex justify-between items-center">
+              <button onclick="speakCurrentScrambleWord()" class="text-xs font-bold text-indigo-300 hover:underline">🔊 Listen Pronunciation Clue</button>
+              <button onclick="nextEssScramble()" class="text-xs font-bold bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-xl">Next Word →</button>
+            </div>
+          </div>
+
+          <!-- MODE 3: CONTEXT SENTENCE GAP-FILL -->
+          <div id="ess-view-context" class="hidden max-w-3xl mx-auto bg-slate-950 border border-indigo-500/30 rounded-3xl p-6 sm:p-8 space-y-5">
+            <div class="flex items-center justify-between text-xs font-bold text-slate-400">
+              <span>Context Completion • Gap-Fill</span>
+              <span id="ess-ctx-counter" class="text-indigo-400">Word 1 / 20</span>
+            </div>
+
+            <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800 space-y-2">
+              <div class="text-xs font-bold text-amber-400" id="ess-ctx-uz">🇺🇿 Tarjima</div>
+              <p id="ess-ctx-sentence" class="text-base sm:text-lg font-semibold text-white leading-relaxed"></p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+              <input type="text" id="ess-ctx-input" autocomplete="off" placeholder="Type the missing Unit 11 word..." class="flex-1 bg-slate-900 border-2 border-slate-700 focus:border-emerald-500 rounded-2xl px-4 py-3 text-base font-mono font-bold text-white focus:outline-none" />
+              <button onclick="checkEssContext()" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm px-6 py-3 rounded-2xl transition">
+                Check Word
+              </button>
+            </div>
+
+            <div id="ess-ctx-feedback" class="text-sm font-bold min-h-[24px]"></div>
+
+            <div class="flex justify-between items-center pt-2">
+              <button onclick="hintEssContext()" class="text-xs font-bold text-amber-300 hover:underline">💡 Give Letter Hint</button>
+              <button onclick="nextEssContext()" class="text-xs font-bold bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-xl">Skip / Next →</button>
+            </div>
+          </div>
+
+          <!-- MODE 4: ALL 20 WORDS STUDY CARDS WITH AUDIO -->
+          <div id="ess-view-wordlist" class="hidden grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3"></div>
+        </div>
+      </div>
+
+      <!-- ===================================================== -->
+      <!-- GAME C: ERROR HUNTER (SPECIALIZED SCHOOL CHALLENGE)   -->
+      <!-- ===================================================== -->
+      <div id="game-panel-hunter" class="hidden space-y-6 animate-enter">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl max-w-3xl mx-auto space-y-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <span class="text-xs font-extrabold uppercase tracking-wider text-rose-400">7-B Specialized Olympiad Level</span>
+              <h3 class="text-xl font-black text-white">🕵️ Error Hunter: Find & Fix the Mistake!</h3>
+            </div>
+            <span id="hunter-score-pill" class="text-xs font-mono font-bold bg-rose-500/20 text-rose-300 px-3 py-1 rounded-full">Solved: 0</span>
+          </div>
+
+          <div class="bg-slate-950 border border-rose-500/30 rounded-2xl p-6 space-y-4">
+            <div class="text-xs font-bold text-slate-400 uppercase tracking-wider">Which option corrects this broken sentence?</div>
+            <div id="hunter-broken-sentence" class="p-4 rounded-xl bg-rose-950/30 border border-rose-500/30 text-base sm:text-lg font-mono font-bold text-rose-200">
+              Loading...
+            </div>
+            <p id="hunter-uz-hint" class="text-xs text-amber-300"></p>
+            <div id="hunter-options" class="space-y-2.5 pt-1"></div>
+            <div id="hunter-feedback" class="hidden p-3.5 rounded-xl text-xs sm:text-sm font-semibold"></div>
+          </div>
+
+          <div class="flex justify-end">
+            <button id="hunter-next-btn" onclick="nextHunterQuestion()" class="hidden bg-rose-500 hover:bg-rose-400 text-white font-black text-sm px-6 py-2.5 rounded-xl transition">
+              Next Case →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===================================================== -->
+      <!-- GAME D: GRAMMAR & RECIPE SPEED BLITZ                  -->
+      <!-- ===================================================== -->
+      <div id="game-panel-grammar" class="hidden space-y-6 animate-enter">
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-xl max-w-3xl mx-auto space-y-6">
+          <div class="flex items-center justify-between">
+            <div>
+              <span class="text-xs font-extrabold uppercase tracking-wider text-amber-400">7th Grade Grammar Challenge</span>
+              <h3 class="text-xl font-black text-white">Imperatives, Conditionals & Connectors Blitz</h3>
+            </div>
+            <span id="gram-score-pill" class="text-xs font-mono font-bold bg-amber-500/20 text-amber-300 px-3 py-1 rounded-full">0 / 10</span>
+          </div>
+
+          <div id="gram-box" class="bg-slate-950 border border-slate-800 rounded-2xl p-6 space-y-4">
+            <p id="gram-question" class="text-base sm:text-lg font-bold text-white"></p>
+            <p id="gram-uz" class="text-xs text-slate-400"></p>
+            <div id="gram-options" class="space-y-2.5 pt-2"></div>
+            <div id="gram-feedback" class="hidden p-3 rounded-xl text-xs font-semibold"></div>
+          </div>
+
+          <div class="flex justify-end">
+            <button id="gram-next-btn" onclick="nextGramQuestion()" class="hidden bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-sm px-6 py-2.5 rounded-xl transition">
+              Next Question →
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- SECTION 2: CLASSMATE RECIPE POSTER BUILDER              -->
+    <!-- ======================================================= -->
+    <section id="section-builder" class="hidden space-y-6 animate-enter">
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <span class="text-xs font-extrabold uppercase tracking-wider text-indigo-400">Unit 9 Project Tool • Page 85</span>
+            <h2 class="text-xl sm:text-2xl font-black text-white">
+              <span data-lang-en>Create & Print Your Own Recipe Poster</span>
+              <span data-lang-uz>O'z Retsept Posteringizni Yarating va Chop Eting</span>
+            </h2>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <button onclick="loadBuilderSample('gurtik')" class="text-xs font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 px-3.5 py-2 rounded-xl transition">
+              🍲 Qo'ng'irotcha Jo'xori Gurtik
+            </button>
+            <button onclick="loadBuilderSample('qovurdoq')" class="text-xs font-bold bg-rose-600 hover:bg-rose-500 text-white px-3.5 py-2 rounded-xl transition">
+              🥩 Qo'ng'irotcha Qovurdoq
+            </button>
+            <button onclick="loadBuilderSample('cake')" class="text-xs font-bold bg-indigo-600 hover:bg-indigo-500 text-white px-3.5 py-2 rounded-xl transition">
+              🍫 Chocolate Cake
+            </button>
+            <button onclick="loadBuilderSample('salad')" class="text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white px-3.5 py-2 rounded-xl transition">
+              🥗 Green Salad
+            </button>
+          </div>
+        </div>
+
+        <!-- Textbook Idea Cloud (Page 85) -->
+        <div class="bg-slate-950/80 border border-slate-800 rounded-2xl p-4">
+          <div class="text-xs font-bold text-slate-400 mb-2">
+            💡 <span data-lang-en>Textbook Dish Ideas (Click any dish to start):</span><span data-lang-uz>Darslikdagi taom g'oyalari (Tanlash uchun bosing):</span>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <button onclick="applyIdeaChip('🍝', 'Spaghetti Bolognese')" class="px-3 py-1 rounded-full bg-indigo-500/15 hover:bg-indigo-500/30 border border-indigo-500/30 text-indigo-200 text-xs font-bold transition">🍝 Spaghetti Bolognese</button>
+            <button onclick="applyIdeaChip('🥗', 'Green Salad')" class="px-3 py-1 rounded-full bg-emerald-500/15 hover:bg-emerald-500/30 border border-emerald-500/30 text-emerald-200 text-xs font-bold transition">🥗 Green Salad</button>
+            <button onclick="applyIdeaChip('🍕', 'Homemade Pizza')" class="px-3 py-1 rounded-full bg-amber-500/15 hover:bg-amber-500/30 border border-amber-500/30 text-amber-200 text-xs font-bold transition">🍕 Pizza</button>
+            <button onclick="applyIdeaChip('🍫', 'Chocolate Cake')" class="px-3 py-1 rounded-full bg-purple-500/15 hover:bg-purple-500/30 border border-purple-500/30 text-purple-200 text-xs font-bold transition">🍫 Chocolate Cake</button>
+            <button onclick="applyIdeaChip('🥪', 'Toasted Cheese Sandwich')" class="px-3 py-1 rounded-full bg-orange-500/15 hover:bg-orange-500/30 border border-orange-500/30 text-orange-200 text-xs font-bold transition">🥪 Toasted Cheese Sandwich</button>
+            <button onclick="applyIdeaChip('🧅', 'French Onion Soup')" class="px-3 py-1 rounded-full bg-cyan-500/15 hover:bg-cyan-500/30 border border-cyan-500/30 text-cyan-200 text-xs font-bold transition">🧅 Onion Soup</button>
+            <button onclick="applyIdeaChip('🥧', 'Classic Apple Pie')" class="px-3 py-1 rounded-full bg-rose-500/15 hover:bg-rose-500/30 border border-rose-500/30 text-rose-200 text-xs font-bold transition">🥧 Apple Pie</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
+        <!-- Planner Form -->
+        <div class="xl:col-span-7 bg-slate-900 border border-amber-500/30 rounded-3xl overflow-hidden shadow-xl">
+          <div class="bg-gradient-to-r from-amber-500 to-orange-500 px-6 py-3.5 text-slate-950 font-black text-sm sm:text-base uppercase tracking-wide flex justify-between items-center">
+            <span>📋 Recipe Planner (Rejalashtirish Jadvali)</span>
+            <span>✍️</span>
+          </div>
+
+          <div class="p-6 space-y-5">
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
+              <div>
+                <label class="block text-xs font-bold text-slate-400 mb-1">Icon</label>
+                <select id="b-emoji" oninput="updateCustomPoster()" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3 py-2 text-xl text-center">
+                  <option value="🍲">🍲</option>
+                  <option value="🥩">🥩</option>
+                  <option value="🍫">🍫</option>
+                  <option value="🥗">🥗</option>
+                  <option value="🍕">🍕</option>
+                  <option value="🍝">🍝</option>
+                  <option value="🥧">🥧</option>
+                  <option value="🥪">🥪</option>
+                  <option value="🧅">🧅</option>
+                  <option value="🍨">🍨</option>
+                </select>
+              </div>
+              <div class="sm:col-span-3">
+                <label class="block text-xs font-bold text-slate-400 mb-1">Dish Title / Taom nomi</label>
+                <input type="text" id="b-title" oninput="updateCustomPoster()" placeholder="e.g., Homemade Chocolate Cake" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white focus:border-amber-400 focus:outline-none" />
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-400 mb-1">Short Description (1–2 sentences) / Qisqacha ta'rif</label>
+              <textarea id="b-desc" rows="2" oninput="updateCustomPoster()" placeholder="This is an easy and delicious dessert..." class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white focus:border-amber-400 focus:outline-none"></textarea>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-400 mb-1">Preparation Time / Vaqti</label>
+                <input type="text" id="b-time" oninput="updateCustomPoster()" placeholder="e.g., 35 minutes" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white focus:border-amber-400 focus:outline-none" />
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-400 mb-1">Student Name / O'quvchi ismi</label>
+                <input type="text" id="b-author" oninput="updateCustomPoster()" value="Rametullayev Sayidbek • Qo'ng'irot" placeholder="Your full name..." class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-sm text-white focus:border-amber-400 focus:outline-none" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-400 mb-1">Ingredients (one per line) / Masalliqlar</label>
+                <textarea id="b-ings" rows="4" oninput="updateCustomPoster()" placeholder="2 cups of flour&#10;3 eggs&#10;1 cup of sugar" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white focus:border-amber-400 focus:outline-none"></textarea>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-400 mb-1">You'll also need (one per line) / Jihozlar</label>
+                <textarea id="b-tools" rows="4" oninput="updateCustomPoster()" placeholder="1 mixing bowl&#10;1 baking pan&#10;An oven" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white focus:border-amber-400 focus:outline-none"></textarea>
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-400 mb-1">What to do (steps, one per line — use Imperatives!) / Tayyorlash</label>
+              <textarea id="b-steps" rows="4" oninput="updateCustomPoster()" placeholder="Mix the flour, sugar, and eggs in a bowl.&#10;Pour the mixture into the pan, then bake for 25 minutes." class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white focus:border-amber-400 focus:outline-none"></textarea>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-400 mb-1">Note (use "If you want", "Don't", "because") / Eslatma</label>
+              <textarea id="b-note" rows="2" oninput="updateCustomPoster()" placeholder="If you want, you can add nuts. Don't open the oven early because the cake will sink!" class="w-full bg-slate-950 border border-slate-700 rounded-xl px-3.5 py-2 text-xs text-white focus:border-amber-400 focus:outline-none"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- Printable Poster Preview -->
+        <div class="xl:col-span-5 space-y-3 sticky top-24">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-extrabold uppercase tracking-wider text-amber-300">🖼️ Live Wall Poster</span>
+            <button onclick="window.print()" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-extrabold px-4 py-2 rounded-xl shadow transition">
+              🖨️ Print Poster
+            </button>
+          </div>
+
+          <div id="printable-poster" class="bg-white text-slate-900 rounded-3xl p-6 shadow-2xl border-2 border-indigo-200 space-y-4">
+            <div class="flex items-start justify-between gap-3 border-b border-slate-200 pb-3">
+              <div>
+                <span class="text-[10px] font-black uppercase tracking-widest bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded">Grade 7 English Project</span>
+                <h3 id="p-title" class="text-2xl font-black text-slate-900 mt-1">Homemade Chocolate Cake</h3>
+                <p id="p-desc" class="text-xs text-slate-600 italic mt-1">A rich and easy dessert for everyone!</p>
+              </div>
+              <div id="p-emoji" class="w-16 h-16 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-4xl shrink-0">🍫</div>
+            </div>
+
+            <div class="inline-block bg-slate-100 text-slate-800 text-xs font-bold px-3 py-1 rounded-lg">
+              ⏱️ Preparation time: <span id="p-time" class="text-indigo-700">35 minutes</span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 text-xs">
+              <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+                <div class="font-black text-indigo-700 uppercase mb-1">Ingredients:</div>
+                <ul id="p-ings" class="list-disc list-inside space-y-0.5 text-slate-700"></ul>
+              </div>
+              <div class="bg-slate-50 p-3 rounded-xl border border-slate-200">
+                <div class="font-black text-indigo-700 uppercase mb-1">You'll also need:</div>
+                <ul id="p-tools" class="list-disc list-inside space-y-0.5 text-slate-700"></ul>
+              </div>
+            </div>
+
+            <div class="text-xs">
+              <div class="font-black text-indigo-700 uppercase mb-1">What to do:</div>
+              <ol id="p-steps" class="list-decimal list-inside space-y-1 text-slate-800"></ol>
+            </div>
+
+            <div class="bg-amber-50 border border-amber-200 p-3 rounded-xl text-xs">
+              <span class="font-black text-amber-800 uppercase">Note: </span>
+              <span id="p-note" class="text-slate-700"></span>
+            </div>
+
+            <div class="pt-2 border-t border-slate-200 flex justify-between text-[11px] text-slate-500">
+              <span>Qo'ng'irot 7-B Specialized School</span>
+              <span id="p-author" class="font-bold text-slate-700">By: Rametullayev Sayidbek • Qo'ng'irot</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================= -->
+  <!-- CLEAN AUTHOR FOOTER                                       -->
+  <!-- ========================================================= -->
+  <footer class="bg-slate-950 border-t border-slate-800/90 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-indigo-600/20 border border-indigo-500/40 flex items-center justify-center font-black text-indigo-300 text-sm">
+          RS
+        </div>
+        <div>
+          <div class="text-sm font-extrabold text-white">
+            Created & Designed <span class="text-amber-400">by Rametullayev Sayidbek</span>
+          </div>
+          <div class="text-xs text-slate-400">
+            7th Grade Specialized School English & Vocabulary Interactive Platform • Qo'ng'irot
+          </div>
+        </div>
+      </div>
+
+      <div class="text-xs font-mono text-slate-500">
+        Grade 7-B • Specialized School • Qo'ng'irot, Qoraqalpog'iston
+      </div>
+    </div>
+  </footer>
+
+  <!-- Grammar Rules Quick Modal -->
+  <div id="grammar-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-slate-900 border border-slate-700 rounded-3xl max-w-xl w-full p-6 space-y-4 shadow-2xl animate-enter">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+        <h3 class="text-lg font-black text-white">🔬 Unit 9 Language Lab Rules</h3>
+        <button onclick="toggleGrammarCheckModal()" class="text-slate-400 hover:text-white font-bold px-2">✕</button>
+      </div>
+      <div class="space-y-2.5 text-xs sm:text-sm text-slate-200">
+        <div class="p-3 rounded-xl bg-indigo-500/10 border border-indigo-500/30">
+          <strong class="text-indigo-300">1. Imperative (Buyruq mayli):</strong> Use base verbs (<em>Rinse, Slice, Heat, Add</em>) to give clear instructions.
+        </div>
+        <div class="p-3 rounded-xl bg-rose-500/10 border border-rose-500/30">
+          <strong class="text-rose-300">2. Negative Imperative:</strong> Use <em>Don't + verb</em> (e.g., <em>Don't stir the layers</em>) to give warnings.
+        </div>
+        <div class="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30">
+          <strong class="text-emerald-300">3. Sequence (then):</strong> Use <em>then</em> to show the next action in order.
+        </div>
+        <div class="p-3 rounded-xl bg-amber-500/10 border border-amber-500/30">
+          <strong class="text-amber-300">4. Choice (If you want):</strong> Use <em>If you want</em> to give optional tips.
+        </div>
+        <div class="p-3 rounded-xl bg-purple-500/10 border border-purple-500/30">
+          <strong class="text-purple-300">5. Reason (because):</strong> Use <em>because</em> to explain why a step or warning is important.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // =========================================================
+    // 1. GLOBAL STATE, SPLASH SCREEN & SPEECH AUDIO
+    // =========================================================
+    let globalXP = 0;
+    let gameStreak = 0;
+    let currentLangMode = 'both';
+    let splashInterval = null;
+
+    function startSplashCountdown() {
+      let secondsLeft = 7;
+      const timerEl = document.getElementById('splash-timer-text');
+      const barEl = document.getElementById('splash-progress-bar');
+
+      setTimeout(() => {
+        if (barEl) barEl.style.width = '0%';
+      }, 60);
+
+      splashInterval = setInterval(() => {
+        secondsLeft--;
+        if (timerEl) timerEl.textContent = `${Math.max(0, secondsLeft)}s`;
+        if (secondsLeft <= 0) {
+          dismissSplash();
+        }
+      }, 1000);
+    }
+
+    function dismissSplash() {
+      clearInterval(splashInterval);
+      const splash = document.getElementById('intro-splash');
+      if (splash && !splash.classList.contains('hidden')) {
+        splash.style.opacity = '0';
+        setTimeout(() => splash.classList.add('hidden'), 650);
+      }
+    }
+
+    function speakText(text) {
+      if (!('speechSynthesis' in window)) {
+        showToast('🔇', 'Audio talaffuz bu brauzerda qo‘llab-quvvatlanmaydi.');
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = 'en-US';
+      utter.rate = 0.92;
+      window.speechSynthesis.speak(utter);
+    }
+
+    function addXP(points) {
+      globalXP += points;
+      gameStreak++;
+      document.getElementById('global-xp').textContent = globalXP;
+      document.getElementById('arena-xp').textContent = `⚡ ${globalXP}`;
+      document.getElementById('game-streak').textContent = `🔥 ${gameStreak}`;
+      launchConfetti();
+    }
+
+    function resetStreak() {
+      gameStreak = 0;
+      document.getElementById('game-streak').textContent = `🔥 0`;
+    }
+
+    // Simple Canvas Confetti Effect
+    function launchConfetti() {
+      const canvas = document.getElementById('confetti-canvas');
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const particles = Array.from({ length: 45 }, () => ({
+        x: canvas.width / 2 + (Math.random() - 0.5) * 200,
+        y: canvas.height / 2,
+        vx: (Math.random() - 0.5) * 12,
+        vy: (Math.random() - 1.2) * 12,
+        size: Math.random() * 7 + 4,
+        color: ['#6366F1', '#10B981', '#F59E0B', '#EC4899', '#38BDF8'][Math.floor(Math.random() * 5)],
+        life: 60
+      }));
+
+      function frame() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let alive = false;
+        particles.forEach(p => {
+          if (p.life > 0) {
+            alive = true;
+            p.x += p.vx;
+            p.y += p.vy;
+            p.vy += 0.35;
+            p.life--;
+            ctx.fillStyle = p.color;
+            ctx.fillRect(p.x, p.y, p.size, p.size);
+          }
+        });
+        if (alive) requestAnimationFrame(frame);
+        else ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+      requestAnimationFrame(frame);
+    }
+
+    function showToast(icon, msg) {
+      const box = document.getElementById('toast-box');
+      document.getElementById('toast-icon').textContent = icon;
+      document.getElementById('toast-msg').textContent = msg;
+      box.classList.remove('hidden');
+      clearTimeout(window._toastTimer);
+      window._toastTimer = setTimeout(() => box.classList.add('hidden'), 3200);
+    }
+
+    // =========================================================
+    // 2. LANGUAGE SWITCHER & NAVIGATION TABS
+    // =========================================================
+    function setLangMode(mode) {
+      currentLangMode = mode;
+      document.querySelectorAll('[data-lang-en]').forEach(el => {
+        el.style.display = (mode === 'en' || mode === 'both') ? '' : 'none';
+      });
+      document.querySelectorAll('[data-lang-uz]').forEach(el => {
+        if (mode === 'uz') {
+          el.style.display = '';
+          el.classList.remove('block', 'opacity-75', 'text-[0.85em]');
+        } else if (mode === 'both') {
+          el.style.display = 'block';
+          el.classList.add('opacity-75', 'text-[0.85em]');
+        } else {
+          el.style.display = 'none';
+        }
+      });
+
+      ['en', 'uz', 'both'].forEach(m => {
+        const btn = document.getElementById('btn-lang-' + m);
+        btn.className = m === mode
+          ? 'lang-btn px-2.5 py-1 rounded-lg text-xs font-extrabold bg-indigo-600 text-white shadow transition-all'
+          : 'lang-btn px-2.5 py-1 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition-all';
+      });
+    }
+
+    function switchMainTab(tabName) {
+      const tabs = ['sayidbek-recipe', 'builder', 'games'];
+      tabs.forEach(t => {
+        const sec = document.getElementById('section-' + t);
+        const btn = document.getElementById('nav-' + t);
+        if (!sec || !btn) return;
+        if (t === tabName) {
+          sec.classList.remove('hidden');
+          btn.className = 'main-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold flex items-center gap-2 bg-indigo-600 text-white shadow-lg shadow-indigo-500/25 transition-all whitespace-nowrap';
+        } else {
+          sec.classList.add('hidden');
+          btn.className = 'main-tab-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold flex items-center gap-2 bg-slate-900 text-slate-300 hover:bg-slate-800 border border-slate-800 transition-all whitespace-nowrap';
+        }
+      });
+    }
+
+    function toggleSayidbekHighlights() {
+      const on = document.getElementById('sayidbek-grammar-toggle').checked;
+      document.querySelectorAll('.s-imp').forEach(e => e.classList.toggle('bg-indigo-500/25', on));
+      document.querySelectorAll('.s-seq').forEach(e => e.classList.toggle('bg-emerald-500/25', on));
+      document.querySelectorAll('.s-cond').forEach(e => e.classList.toggle('bg-amber-500/25', on));
+      document.querySelectorAll('.s-neg').forEach(e => e.classList.toggle('bg-rose-500/25', on));
+      document.querySelectorAll('.s-rea').forEach(e => e.classList.toggle('bg-purple-500/25', on));
+    }
+
+    function toggleGrammarCheckModal() {
+      document.getElementById('grammar-modal').classList.toggle('hidden');
+    }
+
+    // =========================================================
+    // 3. GAMES ARENA SUB-NAVIGATION
+    // =========================================================
+    function switchGameMode(mode) {
+      ['verbs', 'essential', 'hunter', 'grammar'].forEach(m => {
+        const panel = document.getElementById('game-panel-' + m);
+        const btn = document.getElementById('gsub-' + m);
+        if (!panel || !btn) return;
+        if (m === mode) {
+          panel.classList.remove('hidden');
+          btn.className = 'game-sub-btn p-4 rounded-2xl border-2 border-indigo-500 bg-indigo-950/50 text-left shadow-lg transition-all';
+        } else {
+          panel.classList.add('hidden');
+          btn.className = 'game-sub-btn p-4 rounded-2xl border border-slate-800 bg-slate-950/70 hover:border-slate-700 text-left transition-all';
+        }
+      });
+    }
+
+    // =========================================================
+    // 4. GAME A: IRREGULAR VERBS (V1 -> V2 -> V3)
+    // =========================================================
+    const irregularVerbsDB = [
+      { v1: "arise", v2: ["arose"], v3: ["arisen"], uz: "paydo bo'lmoq, ko'tarilmoq", level: "hard" },
+      { v1: "bear", v2: ["bore"], v3: ["borne", "born"], uz: "chidamoq, ko'tarmoq", level: "hard" },
+      { v1: "beat", v2: ["beat"], v3: ["beaten"], uz: "urmoq, yengmoq", level: "core" },
+      { v1: "bite", v2: ["bit"], v3: ["bitten"], uz: "tishlamoq", level: "core" },
+      { v1: "bleed", v2: ["bled"], v3: ["bled"], uz: "qonamoq", level: "hard" },
+      { v1: "blow", v2: ["blew"], v3: ["blown"], uz: "esmoq, puflamoq", level: "core" },
+      { v1: "break", v2: ["broke"], v3: ["broken"], uz: "sindirmoq", level: "core" },
+      { v1: "bring", v2: ["brought"], v3: ["brought"], uz: "olib kelmoq", level: "core" },
+      { v1: "broadcast", v2: ["broadcast"], v3: ["broadcast"], uz: "efirga uzatmoq", level: "hard" },
+      { v1: "burst", v2: ["burst"], v3: ["burst"], uz: "portlamoq, yorilmoq", level: "hard" },
+      { v1: "choose", v2: ["chose"], v3: ["chosen"], uz: "tanlamoq", level: "core" },
+      { v1: "cling", v2: ["clung"], v3: ["clung"], uz: "yopishib olmoq", level: "hard" },
+      { v1: "creep", v2: ["crept"], v3: ["crept"], uz: "sudralmoq, emaklamoq", level: "hard" },
+      { v1: "deal", v2: ["dealt"], v3: ["dealt"], uz: "shug'ullanmoq, kelishmoq", level: "hard" },
+      { v1: "dig", v2: ["dug"], v3: ["dug"], uz: "qazimoq", level: "core" },
+      { v1: "draw", v2: ["drew"], v3: ["drawn"], uz: "chizmoq, tortmoq", level: "core" },
+      { v1: "drive", v2: ["drove"], v3: ["driven"], uz: "haydamoq", level: "core" },
+      { v1: "forbid", v2: ["forbade", "forbad"], v3: ["forbidden"], uz: "taqiqlamoq", level: "hard" },
+      { v1: "forgive", v2: ["forgave"], v3: ["forgiven"], uz: "kechirmoq", level: "core" },
+      { v1: "freeze", v2: ["froze"], v3: ["frozen"], uz: "muzlamoq", level: "core" },
+      { v1: "grind", v2: ["ground"], v3: ["ground"], uz: "maydalamoq, yanchmoq", level: "hard" },
+      { v1: "grow", v2: ["grew"], v3: ["grown"], uz: "o'smoq, yetishtirmoq", level: "core" },
+      { v1: "hide", v2: ["hid"], v3: ["hidden"], uz: "yashirmoq", level: "core" },
+      { v1: "kneel", v2: ["knelt"], v3: ["knelt"], uz: "tiz cho'kmoq", level: "hard" },
+      { v1: "lay", v2: ["laid"], v3: ["laid"], uz: "qo'ymoq, yotqizmoq", level: "hard" },
+      { v1: "lead", v2: ["led"], v3: ["led"], uz: "yetaklamoq, boshqarmoq", level: "hard" },
+      { v1: "lend", v2: ["lent"], v3: ["lent"], uz: "qarz bermoq", level: "core" },
+      { v1: "lie", v2: ["lay"], v3: ["lain"], uz: "yotmoq", level: "hard" },
+      { v1: "light", v2: ["lit", "lighted"], v3: ["lit", "lighted"], uz: "yoqmoq, yoritmoq", level: "hard" },
+      { v1: "ride", v2: ["rode"], v3: ["ridden"], uz: "minmoq", level: "core" },
+      { v1: "rise", v2: ["rose"], v3: ["risen"], uz: "ko'tarilmoq", level: "hard" },
+      { v1: "seek", v2: ["sought"], v3: ["sought"], uz: "izlamoq, qidirmoq", level: "hard" },
+      { v1: "shake", v2: ["shook"], v3: ["shaken"], uz: "silkitmoq", level: "core" },
+      { v1: "shrink", v2: ["shrank"], v3: ["shrunk"], uz: "kichraymoq, kirishmoq", level: "hard" },
+      { v1: "sink", v2: ["sank"], v3: ["sunk"], uz: "cho'kmoq", level: "hard" },
+      { v1: "slide", v2: ["slid"], v3: ["slid"], uz: "sirpanmoq", level: "hard" },
+      { v1: "speak", v2: ["spoke"], v3: ["spoken"], uz: "gapirmoq", level: "core" },
+      { v1: "spin", v2: ["spun"], v3: ["spun"], uz: "aylanmoq, yigirmoq", level: "hard" },
+      { v1: "split", v2: ["split"], v3: ["split"], uz: "bo'lmoq, yormoq", level: "hard" },
+      { v1: "spread", v2: ["spread"], v3: ["spread"], uz: "tarqatmoq, yoymoq", level: "hard" },
+      { v1: "spring", v2: ["sprang"], v3: ["sprung"], uz: "sakramoq", level: "hard" },
+      { v1: "steal", v2: ["stole"], v3: ["stolen"], uz: "o'g'irlamoq", level: "core" },
+      { v1: "sting", v2: ["stung"], v3: ["stung"], uz: "chaqmoq (ari)", level: "hard" },
+      { v1: "stride", v2: ["strode"], v3: ["stridden"], uz: "katta qadam tashlamoq", level: "hard" },
+      { v1: "strike", v2: ["struck"], v3: ["struck"], uz: "urmoq, zarba bermoq", level: "hard" },
+      { v1: "strive", v2: ["strove"], v3: ["striven"], uz: "intilmoq, harakat qilmoq", level: "hard" },
+      { v1: "swear", v2: ["swore"], v3: ["sworn"], uz: "qasam ichmoq", level: "hard" },
+      { v1: "sweep", v2: ["swept"], v3: ["swept"], uz: "supurmoq", level: "hard" },
+      { v1: "swell", v2: ["swelled"], v3: ["swollen"], uz: "shishmoq", level: "hard" },
+      { v1: "swim", v2: ["swam"], v3: ["swum"], uz: "suzmoq", level: "core" },
+      { v1: "swing", v2: ["swung"], v3: ["swung"], uz: "tebranmoq", level: "hard" },
+      { v1: "tear", v2: ["tore"], v3: ["torn"], uz: "yirtmoq", level: "hard" },
+      { v1: "throw", v2: ["threw"], v3: ["thrown"], uz: "otmoq, uloqtirmoq", level: "core" },
+      { v1: "wear", v2: ["wore"], v3: ["worn"], uz: "kiymoq", level: "core" },
+      { v1: "weave", v2: ["wove"], v3: ["woven"], uz: "to'qimoq", level: "hard" },
+      { v1: "weep", v2: ["wept"], v3: ["wept"], uz: "yig'lamoq", level: "hard" },
+      { v1: "wind", v2: ["wound"], v3: ["wound"], uz: "o'ramoq, buramoq", level: "hard" },
+      { v1: "wring", v2: ["wrung"], v3: ["wrung"], uz: "siqmoq (kirni)", level: "hard" },
+      { v1: "write", v2: ["wrote"], v3: ["written"], uz: "yozmoq", level: "core" }
+    ];
+
+    let activeVerbList = [...irregularVerbsDB];
+    let currentVerbIndex = 0;
+    let verbSolvedCount = 0;
+
+    function shuffleArray(arr) {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    function resetVerbRound() {
+      const diff = document.getElementById('verb-difficulty').value;
+      const filtered = diff === 'all' ? irregularVerbsDB : irregularVerbsDB.filter(v => v.level === diff);
+      activeVerbList = shuffleArray(filtered);
+      currentVerbIndex = 0;
+      loadCurrentVerb();
+    }
+
+    function loadCurrentVerb() {
+      const verb = activeVerbList[currentVerbIndex % activeVerbList.length];
+      document.getElementById('verb-counter').textContent = `Verb #${verbSolvedCount + 1} (${currentVerbIndex + 1}/${activeVerbList.length})`;
+      document.getElementById('verb-level-badge').textContent = verb.level === 'hard' ? '🔥 Specialized Hard' : '⭐ Core Grade 7';
+      document.getElementById('verb-v1-display').textContent = verb.v1;
+      document.getElementById('verb-uz-hint').textContent = `🇺🇿 ${verb.uz}`;
+
+      const in2 = document.getElementById('input-v2');
+      const in3 = document.getElementById('input-v3');
+      in2.value = '';
+      in3.value = '';
+      in2.className = 'w-full bg-slate-900 border-2 border-slate-700 focus:border-indigo-500 rounded-2xl px-4 py-3 text-lg font-mono font-bold text-white focus:outline-none transition';
+      in3.className = 'w-full bg-slate-900 border-2 border-slate-700 focus:border-purple-500 rounded-2xl px-4 py-3 text-lg font-mono font-bold text-white focus:outline-none transition';
+      document.getElementById('feedback-v2').textContent = '';
+      document.getElementById('feedback-v3').textContent = '';
+
+      document.getElementById('btn-check-verb').classList.remove('hidden');
+      document.getElementById('btn-next-verb').classList.add('hidden');
+      in2.focus();
+    }
+
+    function checkVerbAnswer() {
+      const verb = activeVerbList[currentVerbIndex % activeVerbList.length];
+      const in2 = document.getElementById('input-v2');
+      const in3 = document.getElementById('input-v3');
+      const val2 = in2.value.trim().toLowerCase();
+      const val3 = in3.value.trim().toLowerCase();
+
+      const ok2 = verb.v2.includes(val2);
+      const ok3 = verb.v3.includes(val3);
+
+      const fb2 = document.getElementById('feedback-v2');
+      const fb3 = document.getElementById('feedback-v3');
+
+      if (ok2) {
+        in2.classList.remove('border-slate-700', 'border-rose-500');
+        in2.classList.add('border-emerald-500', 'bg-emerald-950/30');
+        fb2.innerHTML = `<span class="text-emerald-400">✅ Correct! (${verb.v2.join(' / ')})</span>`;
+      } else {
+        in2.classList.remove('border-slate-700', 'border-emerald-500');
+        in2.classList.add('border-rose-500', 'bg-rose-950/30');
+        fb2.innerHTML = `<span class="text-rose-400">❌ Expected: ${verb.v2.join(' / ')}</span>`;
+      }
+
+      if (ok3) {
+        in3.classList.remove('border-slate-700', 'border-rose-500');
+        in3.classList.add('border-emerald-500', 'bg-emerald-950/30');
+        fb3.innerHTML = `<span class="text-emerald-400">✅ Correct! (${verb.v3.join(' / ')})</span>`;
+      } else {
+        in3.classList.remove('border-slate-700', 'border-emerald-500');
+        in3.classList.add('border-rose-500', 'bg-rose-950/30');
+        fb3.innerHTML = `<span class="text-rose-400">❌ Expected: ${verb.v3.join(' / ')}</span>`;
+      }
+
+      const card = document.getElementById('verb-card');
+      if (ok2 && ok3) {
+        verbSolvedCount++;
+        addXP(15);
+        card.classList.remove('animate-pop');
+        void card.offsetWidth;
+        card.classList.add('animate-pop');
+        document.getElementById('btn-check-verb').classList.add('hidden');
+        document.getElementById('btn-next-verb').classList.remove('hidden');
+        document.getElementById('btn-next-verb').focus();
+      } else {
+        resetStreak();
+        card.classList.remove('animate-shake');
+        void card.offsetWidth;
+        card.classList.add('animate-shake');
+      }
+    }
+
+    function showVerbHint() {
+      const verb = activeVerbList[currentVerbIndex % activeVerbList.length];
+      document.getElementById('feedback-v2').innerHTML = `<span class="text-amber-300">💡 Starts with "${verb.v2[0].slice(0, 2)}..."</span>`;
+      document.getElementById('feedback-v3').innerHTML = `<span class="text-amber-300">💡 Starts with "${verb.v3[0].slice(0, 2)}..."</span>`;
+    }
+
+    function revealVerbAnswer() {
+      const verb = activeVerbList[currentVerbIndex % activeVerbList.length];
+      document.getElementById('input-v2').value = verb.v2[0];
+      document.getElementById('input-v3').value = verb.v3[0];
+      document.getElementById('feedback-v2').innerHTML = `<span class="text-slate-400">Answer: ${verb.v2.join(' / ')}</span>`;
+      document.getElementById('feedback-v3').innerHTML = `<span class="text-slate-400">Answer: ${verb.v3.join(' / ')}</span>`;
+      document.getElementById('btn-check-verb').classList.add('hidden');
+      document.getElementById('btn-next-verb').classList.remove('hidden');
+    }
+
+    function nextVerb() {
+      currentVerbIndex++;
+      loadCurrentVerb();
+    }
+
+    function speakCurrentVerb() {
+      const verb = activeVerbList[currentVerbIndex % activeVerbList.length];
+      speakText(`${verb.v1}, ${verb.v2[0]}, ${verb.v3[0]}`);
+    }
+
+    function toggleVerbTable() {
+      const table = document.getElementById('verb-reference-table');
+      table.classList.toggle('hidden');
+      if (!table.classList.contains('hidden')) {
+        document.getElementById('verb-table-grid').innerHTML = irregularVerbsDB.map(v => `
+          <div class="p-2 rounded-lg bg-slate-900 border border-slate-800 flex justify-between items-center">
+            <span class="text-indigo-300 font-bold">${v.v1} → ${v.v2[0]} → ${v.v3[0]}</span>
+            <span class="text-[10px] text-slate-400 font-sans truncate ml-2">${v.uz}</span>
+          </div>
+        `).join('');
+      }
+    }
+
+    // Enter key listener for V2 / V3 inputs
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && !document.getElementById('game-panel-verbs').classList.contains('hidden')) {
+        const nextBtn = document.getElementById('btn-next-verb');
+        if (!nextBtn.classList.contains('hidden')) {
+          nextVerb();
+        } else if (document.activeElement.id === 'input-v2') {
+          document.getElementById('input-v3').focus();
+        } else if (document.activeElement.id === 'input-v3') {
+          checkVerbAnswer();
+        }
+      }
+    });
+
+    // =========================================================
+    // 5. GAME B: 4000 ESSENTIAL ENGLISH WORDS 4 — UNIT 11
+    // =========================================================
+    const essential4Unit11 = [
+      { word: "alliance", pos: "n.", def: "a group of people, organizations, or countries that have united to work together", uz: "ittifoq", sentence: "The two neighboring countries formed a strong ________ to protect their borders." },
+      { word: "applause", pos: "n.", def: "the noise made by a group of people clapping their hands to show approval", uz: "olqish", sentence: "The audience burst into loud ________ after the student's speech." },
+      { word: "armed", pos: "adj.", def: "carrying weapons such as guns, swords, or spears", uz: "qurollangan", sentence: "Ancient palace guards were always ________ with shields and spears." },
+      { word: "authoritative", pos: "adj.", def: "showing that you are confident, in control, and expect to be respected and obeyed", uz: "ishonchli, asosli", sentence: "Our English teacher spoke in an ________ voice that everyone respected." },
+      { word: "ceremony", pos: "n.", def: "a formal public or religious event performed on a special occasion", uz: "marosim", sentence: "The graduation ________ will take place in the main school hall tomorrow." },
+      { word: "culture", pos: "n.", def: "the music, art, literature, customs, and beliefs of a particular society", uz: "madaniyat", sentence: "Samarkand is famous around the world for its rich history and ________." },
+      { word: "defense", pos: "n.", def: "something that protects against attack or harm", uz: "himoya", sentence: "High stone walls were built for the ________ of the ancient fortress." },
+      { word: "detail", pos: "n.", def: "a small fact or piece of information about something", uz: "tafsil", sentence: "Sayidbek explained every ________ of his Samarkand plov recipe clearly." },
+      { word: "diverse", pos: "adj.", def: "very different from each other; showing great variety", uz: "xilma-xil", sentence: "Uzbekistan has a ________ landscape with mountains, valleys, and deserts." },
+      { word: "enchant", pos: "v.", def: "to attract and delight someone completely; to put under a magic spell", uz: "maftun qilmoq", sentence: "The glowing blue domes of Registan ________ every visitor at night." },
+      { word: "equip", pos: "v.", def: "to provide a person or place with the things needed for a particular purpose", uz: "jihozlamoq", sentence: "The specialized school decided to ________ the science lab with new microscopes." },
+      { word: "exception", pos: "n.", def: "someone or something that is not included in a general rule", uz: "istisno", sentence: "Everyone must wear a uniform to school, with no ________." },
+      { word: "genre", pos: "n.", def: "a particular style or category of literature, art, film, or music", uz: "janr", sentence: "Historical adventure is my favorite ________ of books to read." },
+      { word: "impact", pos: "n.", def: "a powerful effect that something has on a situation or person", uz: "ta'sir", sentence: "Reading books every day has a positive ________ on your vocabulary." },
+      { word: "lure", pos: "v.", def: "to tempt or attract someone to go somewhere or do something", uz: "jalb qilmoq", sentence: "The delicious aroma of fresh plov helped ________ the guests to the table." },
+      { word: "obstacle", pos: "n.", def: "something that blocks your way or makes it difficult to achieve something", uz: "to'siq", sentence: "Lack of confidence is the biggest ________ when speaking a foreign language." },
+      { word: "shelter", pos: "n.", def: "a place that gives protection from bad weather or danger", uz: "panoh", sentence: "The hikers found ________ inside a dry cave during the sudden rainstorm." },
+      { word: "sort", pos: "v.", def: "to put things into groups according to their type, size, or quality", uz: "saralamoq", sentence: "Please ________ the irregular verbs into different groups before studying." },
+      { word: "supply", pos: "v./n.", def: "to provide people with something that they need or want", uz: "ta'minlamoq", sentence: "Local farmers ________ the market with fresh yellow carrots and onions." },
+      { word: "vain", pos: "adj.", def: "unsuccessful or useless; also overly proud of one's appearance or abilities", uz: "behuda / mag'rur", sentence: "They made a ________ attempt to climb the steep mountain during the storm." }
+    ];
+
+    let essQuizOrder = [];
+    let essQuizIdx = 0;
+    let essQuizScore = 0;
+    let essCtxIdx = 0;
+    let essScrIdx = 0;
+
+    function setEssMode(mode) {
+      ['quiz', 'scramble', 'context', 'wordlist'].forEach(m => {
+        const view = document.getElementById('ess-view-' + m);
+        const btn = document.getElementById('ess-tab-' + m);
+        if (!view || !btn) return;
+        view.classList.toggle('hidden', m !== mode);
+        btn.className = m === mode
+          ? 'ess-mode-btn px-3 py-1.5 rounded-lg text-xs font-extrabold bg-emerald-500 text-slate-950 transition'
+          : 'ess-mode-btn px-3 py-1.5 rounded-lg text-xs font-bold text-slate-400 hover:text-white transition';
+      });
+    }
+
+    function initEssentialGame() {
+      essQuizOrder = shuffleArray(essential4Unit11);
+      essQuizIdx = 0;
+      essQuizScore = 0;
+      loadEssQuizQuestion();
+      loadEssScrambleWord();
+      loadEssContextWord();
+      renderEssWordList();
+    }
+
+    function loadEssQuizQuestion() {
+      const current = essQuizOrder[essQuizIdx % essQuizOrder.length];
+      document.getElementById('ess-quiz-progress').textContent = `Question ${(essQuizIdx % 20) + 1} / 20`;
+      document.getElementById('ess-quiz-score').textContent = `Score: ${essQuizScore}`;
+      document.getElementById('ess-quiz-prompt').textContent = `"${current.def}"`;
+      document.getElementById('ess-quiz-uz-clue').textContent = `🇺🇿 O'zbekcha ma'nosi: ${current.uz}`;
+      document.getElementById('ess-quiz-explanation').classList.add('hidden');
+      document.getElementById('ess-next-btn').classList.add('hidden');
+
+      // Generate 3 distractors + 1 correct
+      const distractors = shuffleArray(essential4Unit11.filter(w => w.word !== current.word)).slice(0, 3);
+      const options = shuffleArray([current, ...distractors]);
+
+      const optContainer = document.getElementById('ess-quiz-options');
+      optContainer.innerHTML = options.map(opt => `
+        <button onclick="selectEssOption(this, '${opt.word}', '${current.word}')" class="ess-opt-btn p-4 rounded-2xl border border-slate-800 bg-slate-900 hover:border-emerald-400 text-left transition flex items-center justify-between">
+          <span class="font-extrabold text-base text-white">${opt.word}</span>
+          <span class="text-xs font-mono text-slate-500">${opt.pos}</span>
+        </button>
+      `).join('');
+    }
+
+    function selectEssOption(btn, chosen, correct) {
+      const allBtns = document.querySelectorAll('.ess-opt-btn');
+      allBtns.forEach(b => b.disabled = true);
+
+      const item = essential4Unit11.find(w => w.word === correct);
+      const expBox = document.getElementById('ess-quiz-explanation');
+      expBox.classList.remove('hidden');
+      expBox.innerHTML = `<div class="flex items-center justify-between gap-2"><span><strong>Example:</strong> ${item.sentence.replace('________', `<span class="text-emerald-400 underline font-bold">${item.word}</span>`)}</span><button onclick="speakText('${item.word}')" class="shrink-0 px-2.5 py-1 rounded-lg bg-slate-800 text-emerald-300 text-xs font-bold">🔊 Listen</button></div>`;
+
+      if (chosen === correct) {
+        btn.classList.remove('border-slate-800', 'bg-slate-900');
+        btn.classList.add('border-emerald-500', 'bg-emerald-950/50');
+        essQuizScore++;
+        document.getElementById('ess-quiz-score').textContent = `Score: ${essQuizScore}`;
+        speakText(correct);
+        addXP(10);
+      } else {
+        btn.classList.remove('border-slate-800', 'bg-slate-900');
+        btn.classList.add('border-rose-500', 'bg-rose-950/50');
+        allBtns.forEach(b => {
+          if (b.textContent.includes(correct)) {
+            b.classList.add('border-emerald-500', 'bg-emerald-950/40');
+          }
+        });
+        resetStreak();
+      }
+
+      document.getElementById('ess-next-btn').classList.remove('hidden');
+    }
+
+    function nextEssQuestion() {
+      essQuizIdx++;
+      loadEssQuizQuestion();
+    }
+
+    // Word Scramble Logic for Essential 4 Unit 11
+    function loadEssScrambleWord() {
+      const item = essential4Unit11[essScrIdx % essential4Unit11.length];
+      document.getElementById('ess-scr-counter').textContent = `Word ${(essScrIdx % 20) + 1} / 20`;
+      document.getElementById('ess-scr-uz').textContent = `🇺🇿 ${item.uz} (${item.pos})`;
+      document.getElementById('ess-scr-def').textContent = `"${item.def}"`;
+
+      let scrambled = shuffleArray(item.word.toUpperCase().split(''));
+      if (scrambled.join('') === item.word.toUpperCase()) scrambled.reverse();
+
+      document.getElementById('ess-scr-letters').innerHTML = scrambled.map(ch => `
+        <span class="w-10 h-11 rounded-xl bg-purple-500/20 border border-purple-400/40 text-purple-200 font-mono font-black text-lg flex items-center justify-center shadow">
+          ${ch}
+        </span>
+      `).join('');
+
+      document.getElementById('ess-scr-input').value = '';
+      document.getElementById('ess-scr-feedback').textContent = '';
+    }
+
+    function checkEssScramble() {
+      const item = essential4Unit11[essScrIdx % essential4Unit11.length];
+      const val = document.getElementById('ess-scr-input').value.trim().toLowerCase();
+      const fb = document.getElementById('ess-scr-feedback');
+      if (val === item.word.toLowerCase()) {
+        fb.innerHTML = `<span class="text-emerald-400">✅ Brilliant! "${item.word.toUpperCase()}" is correct! (+15 XP)</span>`;
+        speakText(item.word);
+        addXP(15);
+        setTimeout(() => { essScrIdx++; loadEssScrambleWord(); }, 1100);
+      } else {
+        fb.innerHTML = `<span class="text-rose-400">❌ Try again! Look closely at the scrambled letters.</span>`;
+        resetStreak();
+      }
+    }
+
+    function speakCurrentScrambleWord() {
+      const item = essential4Unit11[essScrIdx % essential4Unit11.length];
+      speakText(item.word);
+    }
+
+    function nextEssScramble() {
+      essScrIdx++;
+      loadEssScrambleWord();
+    }
+
+    function loadEssContextWord() {
+      const item = essential4Unit11[essCtxIdx % essential4Unit11.length];
+      document.getElementById('ess-ctx-counter').textContent = `Word ${(essCtxIdx % 20) + 1} / 20`;
+      document.getElementById('ess-ctx-uz').textContent = `🇺🇿 ${item.uz} (${item.pos})`;
+      document.getElementById('ess-ctx-sentence').textContent = item.sentence;
+      document.getElementById('ess-ctx-input').value = '';
+      document.getElementById('ess-ctx-feedback').textContent = '';
+    }
+
+    function checkEssContext() {
+      const item = essential4Unit11[essCtxIdx % essential4Unit11.length];
+      const val = document.getElementById('ess-ctx-input').value.trim().toLowerCase();
+      const fb = document.getElementById('ess-ctx-feedback');
+      if (val === item.word.toLowerCase()) {
+        fb.innerHTML = `<span class="text-emerald-400">✅ Excellent! "${item.word}" is right! (+15 XP)</span>`;
+        speakText(item.word);
+        addXP(15);
+        setTimeout(() => { essCtxIdx++; loadEssContextWord(); }, 1100);
+      } else {
+        fb.innerHTML = `<span class="text-rose-400">❌ Not quite! Try again or use a hint.</span>`;
+        resetStreak();
+      }
+    }
+
+    function hintEssContext() {
+      const item = essential4Unit11[essCtxIdx % essential4Unit11.length];
+      document.getElementById('ess-ctx-feedback').innerHTML = `<span class="text-amber-300">💡 Hint: Starts with "${item.word.slice(0, 2).toUpperCase()}..." (${item.word.length} letters)</span>`;
+    }
+
+    function nextEssContext() {
+      essCtxIdx++;
+      loadEssContextWord();
+    }
+
+    function renderEssWordList() {
+      document.getElementById('ess-view-wordlist').innerHTML = essential4Unit11.map((w, idx) => `
+        <div class="bg-slate-950 border border-slate-800 hover:border-emerald-500/40 rounded-2xl p-4 space-y-1.5 transition">
+          <div class="flex items-center justify-between gap-2">
+            <span class="font-black text-base text-emerald-400">${idx + 1}. ${w.word}</span>
+            <button onclick="speakText('${w.word}')" title="Listen" class="px-2 py-0.5 rounded-lg bg-slate-900 hover:bg-emerald-500/20 text-emerald-300 text-xs transition">🔊</button>
+          </div>
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-bold text-amber-300">🇺🇿 ${w.uz}</span>
+            <span class="font-mono text-slate-500">${w.pos}</span>
+          </div>
+          <p class="text-xs text-slate-300 leading-relaxed">${w.def}</p>
+          <p class="text-[11px] text-slate-500 italic pt-1">"${w.sentence.replace('________', w.word)}"</p>
+        </div>
+      `).join('');
+    }
+
+    // =========================================================
+    // 5B. GAME C: ERROR HUNTER (SPECIALIZED SCHOOL CHALLENGE)
+    // =========================================================
+    const errorHunterCases = [
+      {
+        broken: "❌ If I will go to Kungrad tomorrow, I visit my grandparents.",
+        uz: "🇺🇿 1-tur shart gap (First Conditional) qoidasini eslang!",
+        options: [
+          "If I go to Kungrad tomorrow, I will visit my grandparents.",
+          "If I went to Kungrad tomorrow, I will visit my grandparents.",
+          "If I go to Kungrad tomorrow, I visited my grandparents."
+        ],
+        correct: 0,
+        explain: "In First Conditional: If + Present Simple (go), will + V1 (will visit)."
+      },
+      {
+        broken: "❌ The ancient manuscript has been wrote by a famous scholar in 1420.",
+        uz: "🇺🇿 'Write' fe'lining V3 (Past Participle) shakliga e'tibor bering!",
+        options: [
+          "The ancient manuscript was written by a famous scholar in 1420.",
+          "The ancient manuscript was wrote by a famous scholar in 1420.",
+          "The ancient manuscript written by a famous scholar in 1420."
+        ],
+        correct: 0,
+        explain: "Passive Voice in the past requires 'was/were + V3 (written)', not V2 (wrote)."
+      },
+      {
+        broken: "❌ Don't stirring the Kungrad juweri gurtik because the dough will break!",
+        uz: "🇺🇿 Bo'lishsiz buyruq mayli (Negative Imperative): Don't + V1!",
+        options: [
+          "Don't stir the Kungrad juweri gurtik because the dough will break!",
+          "Doesn't stir the Kungrad juweri gurtik because the dough will break!",
+          "Don't stirred the Kungrad juweri gurtik because the dough will break!"
+        ],
+        correct: 0,
+        explain: "After 'Don't', always use the base form of the verb (stir)."
+      },
+      {
+        broken: "❌ The explorers walked into the wilderness without a compass and get lost.",
+        uz: "🇺🇿 O'tgan zamon parallel harakati: walked ... and ???",
+        options: [
+          "The explorers walked into the wilderness without a compass and got lost.",
+          "The explorers walked into the wilderness without a compass and gotten lost.",
+          "The explorers walked into the wilderness without a compass and getting lost."
+        ],
+        correct: 0,
+        explain: "Both actions happened in the past: 'walked' and 'got' (V2 of get)."
+      },
+      {
+        broken: "❌ She is enough patient to recite the entire poem without any mistakes.",
+        uz: "🇺🇿 'Enough' so'zi sifatdan (adjective) keyin keladi!",
+        options: [
+          "She is patient enough to recite the entire poem without any mistakes.",
+          "She is patiently enough to recite the entire poem without any mistakes.",
+          "She enough patient is to recite the entire poem without any mistakes."
+        ],
+        correct: 0,
+        explain: "'Enough' comes AFTER adjectives (patient enough), not before them."
+      }
+    ];
+
+    let hunterIdx = 0;
+    let hunterSolved = 0;
+
+    function loadHunterQuestion() {
+      const item = errorHunterCases[hunterIdx % errorHunterCases.length];
+      document.getElementById('hunter-score-pill').textContent = `Solved: ${hunterSolved}`;
+      document.getElementById('hunter-broken-sentence').textContent = item.broken;
+      document.getElementById('hunter-uz-hint').textContent = item.uz;
+      document.getElementById('hunter-feedback').classList.add('hidden');
+      document.getElementById('hunter-next-btn').classList.add('hidden');
+
+      document.getElementById('hunter-options').innerHTML = item.options.map((opt, idx) => `
+        <button onclick="answerHunter(this, ${idx}, ${item.correct})" class="hunter-opt w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-rose-400 text-xs sm:text-sm font-semibold text-white transition">
+          ✅ ${opt}
+        </button>
+      `).join('');
+    }
+
+    function answerHunter(btn, chosen, correct) {
+      document.querySelectorAll('.hunter-opt').forEach(b => b.disabled = true);
+      const item = errorHunterCases[hunterIdx % errorHunterCases.length];
+      const fb = document.getElementById('hunter-feedback');
+      fb.classList.remove('hidden');
+
+      if (chosen === correct) {
+        btn.classList.add('border-emerald-500', 'bg-emerald-950/50');
+        fb.className = 'p-3.5 rounded-xl text-xs sm:text-sm font-bold bg-emerald-500/15 text-emerald-300';
+        fb.textContent = `🎯 Spot on! (+20 XP) — ${item.explain}`;
+        hunterSolved++;
+        addXP(20);
+      } else {
+        btn.classList.add('border-rose-500', 'bg-rose-950/50');
+        fb.className = 'p-3.5 rounded-xl text-xs sm:text-sm font-bold bg-rose-500/15 text-rose-300';
+        fb.textContent = `❌ Missed it! Rule: ${item.explain}`;
+        document.querySelectorAll('.hunter-opt')[correct].classList.add('border-emerald-500', 'bg-emerald-950/40');
+        resetStreak();
+      }
+      document.getElementById('hunter-next-btn').classList.remove('hidden');
+    }
+
+    function nextHunterQuestion() {
+      hunterIdx++;
+      loadHunterQuestion();
+    }
+
+    // =========================================================
+    // 5C. TEXTBOOK EXERCISE 1 (PAGE 84 MATCHING)
+    // =========================================================
+    const ex1MatchingData = [
+      { id: 1, phrase: "1. Homemade dish title", answer: "c", uz: "Taom sarlavhasi" },
+      { id: 2, phrase: "2. Preparation time", answer: "f", uz: "Tayyorlash vaqti" },
+      { id: 3, phrase: "3. Ingredients", answer: "a", uz: "Masalliqlar" },
+      { id: 4, phrase: "4. You'll also need", answer: "d", uz: "Kerakli jihozlar" },
+      { id: 5, phrase: "5. What to do", answer: "b", uz: "Tayyorlash tartibi" },
+      { id: 6, phrase: "6. Note", answer: "e", uz: "Qo'shimcha eslatma" }
+    ];
+
+    const ex1Definitions = [
+      { key: "a", text: "a) This tells us what food/drink, etc we need to use to make the dish." },
+      { key: "b", text: "b) This tells us how to make the dish." },
+      { key: "c", text: "c) This tells us what the recipe is for." },
+      { key: "d", text: "d) This tells us the other things we need to use to make the dish." },
+      { key: "e", text: "e) This gives us extra information." },
+      { key: "f", text: "f) This tells us how long it takes." }
+    ];
+
+    let ex1SolvedOnce = false;
+
+    function renderTextbookMatching() {
+      const grid = document.getElementById('ex1-matching-grid');
+      if (!grid) return;
+      grid.innerHTML = ex1MatchingData.map(item => `
+        <div class="bg-slate-950/80 border border-slate-800 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div>
+            <div class="font-extrabold text-sm text-white">${item.phrase}</div>
+            <div class="text-xs text-slate-400">🇺🇿 ${item.uz}</div>
+          </div>
+          <select id="ex1-sel-${item.id}" class="bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs font-bold text-indigo-300 focus:outline-none max-w-xs">
+            <option value="">— Select (a–f) —</option>
+            ${ex1Definitions.map(d => `<option value="${d.key}">${d.text}</option>`).join('')}
+          </select>
+        </div>
+      `).join('');
+    }
+
+    function checkTextbookMatching() {
+      let correctCount = 0;
+      ex1MatchingData.forEach(item => {
+        const sel = document.getElementById('ex1-sel-' + item.id);
+        if (sel.value === item.answer) {
+          correctCount++;
+          sel.classList.remove('border-slate-700', 'border-rose-500');
+          sel.classList.add('border-emerald-500', 'text-emerald-300');
+        } else {
+          sel.classList.remove('border-slate-700', 'border-emerald-500');
+          sel.classList.add('border-rose-500', 'text-rose-300');
+        }
+      });
+
+      const banner = document.getElementById('ex1-result-banner');
+      banner.classList.remove('hidden');
+      if (correctCount === ex1MatchingData.length) {
+        banner.className = 'p-4 rounded-2xl text-sm font-bold bg-emerald-500/15 border border-emerald-500/40 text-emerald-300';
+        banner.textContent = '🎉 Perfect! All 6 recipe parts matched correctly!';
+        if (!ex1SolvedOnce) {
+          ex1SolvedOnce = true;
+          addXP(25);
+        }
+      } else {
+        banner.className = 'p-4 rounded-2xl text-sm font-bold bg-amber-500/15 border border-amber-500/40 text-amber-300';
+        banner.textContent = `You matched ${correctCount} / 6 correctly. Fix the red ones and check again!`;
+      }
+    }
+
+    // =========================================================
+    // 6. GAME C: GRAMMAR & RECIPE SPEED BLITZ
+    // =========================================================
+    const grammarQuestions = [
+      {
+        q: "Complete the warning: '________ overcook the Kungrad sorghum gurtik because it tastes best tender!'",
+        uz: "Ogohlantirishni to'ldiring: 'Qo'ng'irot jo'xori gurtigini haddan tashqari ko'p qaynatmang!'",
+        options: ["Don't", "Doesn't", "Not to"],
+        correct: 0
+      },
+      {
+        q: "Choose the correct connector: 'Don't leave the cake in the oven too long ________ it will burn.'",
+        uz: "To'g'ri bog'lovchini tanlang: 'Tortni pechda uzoq qoldirmang, chunki u kuyib ketadi.'",
+        options: ["because", "if you want", "then"],
+        correct: 0
+      },
+      {
+        q: "What are the V2 and V3 forms of the irregular verb 'shrink'?",
+        uz: "'Shrink' (kichraymoq) noto'g'ri fe'lining V2 va V3 shakllari qaysi?",
+        options: ["shrank — shrunk", "shrinked — shrinked", "shrunk — shrank"],
+        correct: 0
+      },
+      {
+        q: "Which Essential 4 Unit 11 word means 'something that blocks your way' (to'siq)?",
+        uz: "Essential 4 Unit 11 dagi qaysi so'z 'to'siq' ma'nosini bildiradi?",
+        options: ["obstacle", "ceremony", "applause"],
+        correct: 0
+      }
+    ];
+
+    let gramIdx = 0;
+    let gramScore = 0;
+
+    function loadGramQuestion() {
+      const item = grammarQuestions[gramIdx % grammarQuestions.length];
+      document.getElementById('gram-score-pill').textContent = `Score: ${gramScore}`;
+      document.getElementById('gram-question').textContent = `${(gramIdx % grammarQuestions.length) + 1}. ${item.q}`;
+      document.getElementById('gram-uz').textContent = `🇺🇿 ${item.uz}`;
+      document.getElementById('gram-feedback').classList.add('hidden');
+      document.getElementById('gram-next-btn').classList.add('hidden');
+
+      document.getElementById('gram-options').innerHTML = item.options.map((opt, idx) => `
+        <button onclick="answerGram(this, ${idx}, ${item.correct})" class="gram-opt w-full text-left p-3.5 rounded-xl border border-slate-800 bg-slate-900 hover:border-amber-400 text-sm font-semibold text-white transition">
+          ${opt}
+        </button>
+      `).join('');
+    }
+
+    function answerGram(btn, chosen, correct) {
+      document.querySelectorAll('.gram-opt').forEach(b => b.disabled = true);
+      const fb = document.getElementById('gram-feedback');
+      fb.classList.remove('hidden');
+
+      if (chosen === correct) {
+        btn.classList.add('border-emerald-500', 'bg-emerald-950/50');
+        fb.className = 'p-3 rounded-xl text-xs font-bold bg-emerald-500/15 text-emerald-300';
+        fb.textContent = '✅ Correct! +10 XP';
+        gramScore++;
+        addXP(10);
+      } else {
+        btn.classList.add('border-rose-500', 'bg-rose-950/50');
+        fb.className = 'p-3 rounded-xl text-xs font-bold bg-rose-500/15 text-rose-300';
+        fb.textContent = '❌ Incorrect! Check the correct green option.';
+        document.querySelectorAll('.gram-opt')[correct].classList.add('border-emerald-500', 'bg-emerald-950/40');
+        resetStreak();
+      }
+      document.getElementById('gram-next-btn').classList.remove('hidden');
+    }
+
+    function nextGramQuestion() {
+      gramIdx++;
+      loadGramQuestion();
+    }
+
+    // =========================================================
+    // 7. CLASSMATE CUSTOM POSTER BUILDER
+    // =========================================================
+    function applyIdeaChip(emoji, title) {
+      document.getElementById('b-emoji').value = emoji;
+      document.getElementById('b-title').value = title;
+      document.getElementById('b-desc').value = `This is a delicious homemade ${title.toLowerCase()} recipe prepared for our Grade 7 English project!`;
+      updateCustomPoster();
+      showToast(emoji, `"${title}" tanlandi!`);
+    }
+
+    function loadBuilderSample(type) {
+      if (type === 'gurtik') {
+        document.getElementById('b-emoji').value = '🍲';
+        document.getElementById('b-title').value = 'Kungrad Juweri Gurtik';
+        document.getElementById('b-desc').value = 'The proud traditional dish of Kungrad (Qo\'ng\'irot), made with sorghum flour dumplings and rich beef broth!';
+        document.getElementById('b-time').value = '2 hours';
+        document.getElementById('b-ings').value = '1 kg of beef\n400g of white sorghum flour\n150g of wheat flour & 1 egg\n3 onions & 3 potatoes\nSalt and black pepper';
+        document.getElementById('b-tools').value = '1 deep cauldron (qozon)\n1 rolling pin (o\'qlov)\n1 wide tabaq platter';
+        document.getElementById('b-steps').value = 'Boil the beef in cold water for 1.5 hours and skim the foam.\nAdd potatoes and salt, then knead a firm dough with sorghum and wheat flour.\nRoll out the dough and cut it into diamond pieces (gurtik).\nBoil the gurtik in the broth for 7 minutes and serve with sliced meat and onion sauce.';
+        document.getElementById('b-note').value = 'If you want, serve the hot broth in bowls. Don\'t overcook the gurtik because it should keep its tender shape!';
+      } else if (type === 'qovurdoq') {
+        document.getElementById('b-emoji').value = '🥩';
+        document.getElementById('b-title').value = 'Kungrad Crispy Qovurdoq';
+        document.getElementById('b-desc').value = 'A fragrant and hearty traditional meat dish from Kungrad cooked with golden potatoes and onions.';
+        document.getElementById('b-time').value = '50 minutes';
+        document.getElementById('b-ings').value = '700g of tender lamb or beef\n500g of potatoes\n2 large onions\n100ml of vegetable oil\n1 teaspoon of cumin (zira) and salt';
+        document.getElementById('b-tools').value = '1 cast-iron kazan\n1 slotted spoon\n1 sharp knife & board';
+        document.getElementById('b-steps').value = 'Cut the meat and potatoes into medium cubes.\nHeat the oil in the kazan and fry the meat until golden brown.\nAdd sliced onions and spices, then fry for 5 minutes.\nAdd potatoes, cover the kazan, and cook on low heat for 20 minutes.';
+        document.getElementById('b-note').value = 'If you want, garnish with fresh dill and coriander. Don\'t stir too hard at the end because the potatoes may break!';
+      } else if (type === 'cake') {
+        document.getElementById('b-emoji').value = '🍫';
+        document.getElementById('b-title').value = 'Homemade Chocolate Cake';
+        document.getElementById('b-desc').value = 'This is a soft and delicious chocolate cake that you can bake in 35 minutes!';
+        document.getElementById('b-time').value = '35 minutes';
+        document.getElementById('b-ings').value = '2 cups of flour\n1 cup of sugar\n3 tablespoons of cocoa powder\n3 fresh eggs\n1 cup of milk';
+        document.getElementById('b-tools').value = '1 large mixing bowl\n1 whisk or spoon\n1 baking pan\nAn oven';
+        document.getElementById('b-steps').value = 'Preheat the oven to 180°C.\nMix the flour, sugar, and cocoa powder in a bowl.\nAdd the eggs and milk, then stir until smooth.\nPour the batter into the baking pan and bake for 25 minutes.';
+        document.getElementById('b-note').value = 'If you want, you can decorate it with strawberries. Don\'t open the oven door early because the cake might sink!';
+      } else {
+        document.getElementById('b-emoji').value = '🥗';
+        document.getElementById('b-title').value = 'Fresh Achichuk & Green Salad';
+        document.getElementById('b-desc').value = 'This healthy and refreshing salad is the best side dish for Uzbek and Karakalpak feasts!';
+        document.getElementById('b-time').value = '10 minutes';
+        document.getElementById('b-ings').value = '4 ripe red tomatoes\n1 sweet onion\n1 fresh cucumber\nFresh basil and dill\nA pinch of salt';
+        document.getElementById('b-tools').value = '1 sharp knife\n1 cutting board\n1 serving plate';
+        document.getElementById('b-steps').value = 'Wash all the vegetables in cold water.\nSlice the tomatoes and onions as thinly as possible.\nChop the fresh herbs, then sprinkle salt on top.\nMix gently and serve immediately!';
+        document.getElementById('b-note').value = 'If you want, you can add a little black pepper. Don\'t add salt too early because the tomatoes will release too much juice!';
+      }
+      updateCustomPoster();
+    }
+
+    function updateCustomPoster() {
+      document.getElementById('p-emoji').textContent = document.getElementById('b-emoji').value;
+      document.getElementById('p-title').textContent = document.getElementById('b-title').value.trim() || 'Your Dish Title';
+      document.getElementById('p-desc').textContent = document.getElementById('b-desc').value.trim() || 'Your short description...';
+      document.getElementById('p-time').textContent = document.getElementById('b-time').value.trim() || '—';
+      document.getElementById('p-author').textContent = 'By: ' + (document.getElementById('b-author').value.trim() || 'Rametullayev Sayidbek • Qo\'ng\'irot');
+      document.getElementById('p-note').textContent = document.getElementById('b-note').value.trim() || 'Add your note...';
+
+      const toList = (id) => document.getElementById(id).value.split('\n').map(s => s.trim()).filter(Boolean);
+      document.getElementById('p-ings').innerHTML = toList('b-ings').map(i => `<li>${escapeHtml(i)}</li>`).join('');
+      document.getElementById('p-tools').innerHTML = toList('b-tools').map(t => `<li>${escapeHtml(t)}</li>`).join('');
+      document.getElementById('p-steps').innerHTML = toList('b-steps').map(s => `<li>${escapeHtml(s)}</li>`).join('');
+    }
+
+    function escapeHtml(str) {
+      return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    // =========================================================
+    // 8. INITIALIZE ALL MODULES ON PAGE LOAD
+    // =========================================================
+    window.addEventListener('DOMContentLoaded', () => {
+      startSplashCountdown();
+      setLangMode('both');
+      switchMainTab('sayidbek-recipe');
+      switchGameMode('verbs');
+      setEssMode('quiz');
+
+      renderTextbookMatching();
+      resetVerbRound();
+      initEssentialGame();
+      loadHunterQuestion();
+      loadGramQuestion();
+      loadBuilderSample('gurtik');
+    });
+  </script>
+</body>
+</html>
